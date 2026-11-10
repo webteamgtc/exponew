@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "title": "GTCFX 亮相 {expo} | 领取 ${amount} 交易赠金",
+    "description": "在 {expo} 开设 GTC 标准账户，即可获得 ${amount} 美元交易赠金，无需入金。"
+  },
+  "hero": {
+    "kicker": "您的交易之旅从这里开始",
+    "titleLine1": "领先一步。",
+    "titleLine2": "机遇无限。",
+    "bonusCurrency": "USD",
+    "bonusLabel": "交易赠金",
+    "noDeposit": "无需入金。",
+    "lead": "开设 GTC 标准账户，凭 ${amount} 交易赠金迈出下一步。",
+    "terms": "适用资格及赠金条款。",
+    "boothBadge": "欢迎莅临 {booth} 号展位",
+    "stepsDetailed": [
+      {
+        "id": "register",
+        "label": "注册",
+        "text": "填写表格，大约只需两分钟。"
+      },
+      {
+        "id": "activate",
+        "label": "激活",
+        "text": "登录并完善个人资料，即可解锁赠金。"
+      },
+      {
+        "id": "trade",
+        "label": "开始交易",
+        "text": "使用 ${amount} 赠金交易真实市场。"
+      }
+    ],
+    "stepsTitle": "如何领取",
+    "marketsLabel": "交易您熟悉的市场",
+    "markets": [
+      "EUR/USD",
+      "黄金",
+      "US30",
+      "GBP/USD",
+      "原油",
+      "NAS100",
+      "USD/JPY",
+      "白银",
+      "BTC/USD",
+      "GER40"
+    ]
+  },
+  "form": {
+    "eyebrow": "${amount} 欢迎赠金",
+    "title": "立即注册",
+    "subtitle": "创建账户，领取 ${amount} 交易赠金。",
+    "firstName": "名",
+    "firstNamePlaceholder": "例如：明",
+    "lastName": "姓",
+    "lastNamePlaceholder": "例如：王",
+    "phone": "手机号码",
+    "phonePlaceholder": "50 123 4567",
+    "email": "电子邮箱",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "发送验证码",
+    "resendIn": "{seconds} 秒后重发",
+    "resend": "重新发送",
+    "sending": "发送中…",
+    "code": "验证码",
+    "codeHint": "请输入发送到您邮箱的 6 位验证码。",
+    "codeDigit": "第 {n} 位，共 6 位",
+    "country": "居住国家",
+    "countryPlaceholder": "请选择国家",
+    "countriesFailed": "无法加载国家列表，请刷新页面。",
+    "passwordNote": "无需设置密码：账户开通后，我们会立即将登录信息发送到您的邮箱。",
+    "invite": "邀请码",
+    "optional": "（选填）",
+    "invitePlaceholder": "请输入邀请码",
+    "termsBefore": "我已阅读并同意",
+    "termsLink": "条款与条件",
+    "bonusTermsLink": "赠金条款",
+    "and": "及",
+    "agreementLink": "客户协议",
+    "submit": "领取 ${amount} 赠金",
+    "submitting": "正在开设账户…",
+    "secure": "256 位加密，您的信息安全无虞。",
+    "progress": "已完成 {done}/{total}",
+    "errors": {
+      "firstName": "请输入您的名字。",
+      "firstNameLetters": "只能使用字母。",
+      "lastName": "请输入您的姓氏。",
+      "lastNameLetters": "只能使用字母。",
+      "email": "请输入电子邮箱。",
+      "emailInvalid": "请输入有效的电子邮箱。",
+      "emailRegistered": "该邮箱已注册，请直接登录。",
+      "otpRequired": "请输入邮件中的 6 位验证码。",
+      "otpLength": "验证码为 6 位数字。",
+      "country": "请选择居住国家。",
+      "validCountry": "请从列表中选择国家。",
+      "phone": "请输入手机号码。",
+      "phoneInvalid": "请输入有效的手机号码。",
+      "terms": "请接受条款以继续。"
+    },
+    "toast": {
+      "otpSent": "6 位验证码已发送到您的邮箱。",
+      "codeError": "验证码发送失败，请重试。",
+      "registrationFailed": "账户开设失败，请重试。"
+    }
+  },
+  "success": {
+    "eyebrow": "注册完成",
+    "title": "{name}，感谢您的注册！",
+    "text": "请查看您的邮箱。我们已将 GTCFX 交易门户的用户名和密码发送至 {email}。",
+    "textNoEmail": "您的账户已开通，用户名和密码稍后将发送至 {email}；如未收到，请咨询展位工作人员。",
+    "inboxTip": "没找到？请检查垃圾邮件文件夹。",
+    "steps": [
+      {
+        "id": "email",
+        "label": "查看您的邮箱",
+        "text": "您的用户名和密码已在收件箱等您。"
+      },
+      {
+        "id": "app",
+        "label": "下载应用",
+        "text": "在 App Store 或 Google Play 下载“GTCFX: GTC GO”。"
+      },
+      {
+        "id": "trade",
+        "label": "登录并开始交易",
+        "text": "使用登录信息登录，激活账户，并用 ${amount} 美元赠金交易。"
+      }
+    ],
+    "app": {
+      "title": "下载 GTCFX: GTC GO",
+      "text": "使用邮件中的用户名和密码登录，随时随地用手机交易。",
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "login": "或通过网页门户登录",
+    "another": "为下一位访客注册"
+  },
+  "benefits": {
+    "kicker": "更好的起点",
+    "title": "小起点，",
+    "titleAccent": "真机遇。",
+    "items": [
+      {
+        "id": "funds",
+        "title": "真实资金，真实市场。",
+        "text": "使用 {amount} 美元交易真实市场，而非模拟账户。"
+      },
+      {
+        "id": "deposit",
+        "title": "无需入金即可开始。",
+        "text": "测试策略或体验我们的交易平台。使用 {amount} 美元可交易赠金时，您的资金分毫不动。"
+      },
+      {
+        "id": "next",
+        "title": "清楚每一步。",
+        "text": "注册、激活账户，然后开始交易。开始前请查看赠金及出金条款。"
+      }
+    ]
+  },
+  "footer": {
+    "riskTitle": "风险提示",
+    "risk": [
+      "衍生品交易（包括滚动即期外汇（FX）和差价合约（CFD））具有高度投机性，风险极大，并不适合所有投资者。本网站上的任何内容均不构成投资建议或推荐，且在编制时未考虑您的个人目标、财务状况或需求。",
+      "外汇和差价合约是以保证金方式交易的复杂产品，由于杠杆会同时放大盈利和亏损，因此存在快速亏损的高风险。您可能损失部分或全部投资本金，亏损亦可能超过您的初始投资。交易前，请考虑您的投资目标、财务状况、经验水平和风险承受能力，确保您了解这些产品的运作方式，并仅使用您可承受损失的资金进行交易。如有任何疑问，请咨询独立的财务或税务顾问。过往表现并不代表未来业绩。",
+      "客户签约的实体取决于客户所在的司法管辖区、资格、分类和开户途径。适用的签约实体，以及（如适用）产品发行方和/或交易对手，将在客户提交开户申请之前明确披露，并在相关客户协议中注明。某一实体提供的产品和服务，另一实体未必提供。GTC 金融集团旗下的每个实体均为独立的法律实体，某一实体持有的牌照不适用于集团内的其他实体。",
+      "GTC Global Trading Ltd 是一家在科摩罗联盟安茹昂注册成立的公司（公司编号 16283），持有安茹昂离岸金融管理局颁发的牌照，牌照编号 L16283/GTC。注册地址：Boulevard de Coalancanthe, Mutsamudu, Anjouan, Union of the Comoros。",
+      "GTC Global Trade Capital Co. Limited（公司编号 40354）是一家在瓦努阿图注册成立的公司。该公司持有瓦努阿图金融服务委员会根据《金融交易商牌照法》[CAP. 70] 颁发的 A 类、B 类和 C 类主事人牌照。注册地址：First Floor, B&P House, Kumul Highway, Port Vila, Vanuatu。",
+      "GTC Global Ltd 是一家在毛里求斯注册成立的公司（公司编号 C188049），持有全球商业牌照，并获毛里求斯金融服务委员会（FSC）授权和监管，类别为投资交易商（全面服务交易商，不含承销）/ SEC-2.1B，牌照编号 GB22200292，依据《2005 年证券法》第 29 条、《2007 年证券（牌照）规则》第 4 条以及《2008 年金融服务（综合牌照和费用）规则》。注册办事处及主要营业地点：Ground Floor, The Catalyst, Silicon Avenue, 40 Cybercity, 72201 Ebene, Republic of Mauritius。",
+      "通过本国际网站提供的服务不向美国、日本、澳大利亚的居民提供，也不在提供该等服务将违反适用法律、法规或制裁的任何司法管辖区提供。"
+    ],
+    "copyright": "© {year} GTCFX 版权所有。"
+  },
+  "stats": {
+    "items": [
+      {
+        "value": 985000,
+        "prefix": "",
+        "suffix": "+",
+        "label": "已服务客户"
+      },
+      {
+        "value": 7,
+        "prefix": "",
+        "suffix": "+",
+        "label": "交易市场"
+      },
+      {
+        "value": 20,
+        "prefix": "",
+        "suffix": "+",
+        "label": "支持语言"
+      },
+      {
+        "value": 850,
+        "prefix": "$",
+        "suffix": " 十亿",
+        "label": "月交易量"
+      }
+    ]
+  },
+  "platforms": {
+    "eyebrow": "交易平台",
+    "title": "随时随地，在任何设备上交易",
+    "subtitle": "选择适合您风格的平台，支持移动端、桌面端及网页端。",
+    "items": [
+      {
+        "key": "gtcgo",
+        "brand": "GTC Go",
+        "title": "GTC Go——交易与投资",
+        "tagline": "我们的自有应用，让您随时随地交易与投资",
+        "cta": "下载GTC Go"
+      },
+      {
+        "key": "mt5",
+        "brand": "MetaTrader 5",
+        "title": "MT5交易平台",
+        "tagline": "现代交易的先进工具",
+        "cta": "下载MT5平台"
+      },
+      {
+        "key": "mt4",
+        "brand": "MetaTrader 4",
+        "title": "MT4交易平台",
+        "tagline": "值得信赖的经典交易平台",
+        "cta": "下载MT4平台"
+      }
+    ],
+    "features": [
+      "Windows · macOS · 网页端",
+      "iOS · Android",
+      "一键交易"
+    ],
+    "perks": [
+      "<10毫秒执行",
+      "杠杆最高1:2000",
+      "24/5交易"
+    ]
+  },
+  "faq": {
+    "eyebrow": "注册前须知",
+    "titleA": "关于赠金，",
+    "titleB": "您可能想问",
+    "subtitle": "以下是访客最常问的问题。仍有疑问？欢迎到展位咨询我们的团队。",
+    "contact": "联系我们",
+    "items": [
+      {
+        "q": "领取 ${amount} 美元赠金需要入金吗？",
+        "a": "不需要。通过本页面开设 GTC 标准账户，账户激活后即可获得 ${amount} 美元交易赠金，无需任何入金。"
+      },
+      {
+        "q": "为什么不用设置密码？",
+        "a": "为了让注册更快捷，我们会为您生成安全密码，并在账户开通后立即通过邮件发送您的登录信息。首次登录后请修改密码。"
+      },
+      {
+        "q": "如何激活账户？",
+        "a": "使用邮件中的信息登录客户门户，完善个人资料并完成身份验证。验证通过后即可解锁赠金。"
+      },
+      {
+        "q": "赠金可以交易哪些产品？",
+        "a": "可交易真实市场：外汇、贵金属、能源、指数等，支持 MetaTrader 4、MetaTrader 5 及 GTC Go 应用。"
+      },
+      {
+        "q": "赠金可以提取吗？",
+        "a": "赠金本身仅用于交易。使用赠金获得的盈利可按照赠金条款提取。开始前请阅读赠金条款。"
+      },
+      {
+        "q": "没有收到邮件怎么办？",
+        "a": "请先检查垃圾邮件文件夹。如果仍未收到，请咨询展位工作人员或发送邮件给客服，我们会重新发送您的登录信息。"
+      }
+    ],
+    "languages": "20多种语言",
+    "questions": "问题"
+  },
+  "companyPage": {
+    "legalSection": {
+      "title": "法律信息",
+      "subtitle": "GTCFX监管信息",
+      "description": "GTC集团在全球拥有以下实体，共同组成GTC Financial Group。各实体依据其在相关司法管辖区持有的牌照提供金融服务。",
+      "viewMore": "查看更多",
+      "entities": {
+        "australia": {
+          "name": "澳大利亚",
+          "text": "GTC Global (Australia) Pty Ltd持有编号为496371的澳大利亚金融服务牌照。GTC Global (Australia)专注于为澳大利亚客户提供教育服务。"
+        },
+        "mauritius": {
+          "name": "毛里求斯",
+          "text": "GTC Global Ltd.是在毛里求斯注册成立的有限公司（公司编号：C188049），持有毛里求斯金融服务委员会颁发的牌照（编号：GB22200292），获准以SEC-2类别开展交易业务。"
+        },
+        "southAfrica": {
+          "name": "南非",
+          "text": "GTC Global SA (Pty) Ltd（公司编号2020/810937/07）是一家获授权的金融服务提供商（FSP编号51545）。注册地址为南非西开普省开普敦克莱蒙特区卡文迪什路18号，邮编7708。该公司既不是做市商，也不是产品发行方，仅依据2002年《金融咨询和中介服务法》（FAIS）担任中介。"
+        },
+        "vanuatu": {
+          "name": "瓦努阿图",
+          "text": "GTC Global Trade Capital Co. Limited是一家全球金融经纪公司，在瓦努阿图共和国金融服务委员会注册，并接受其监管和授权，公司牌照编号为40354。注册地址：瓦努阿图维拉港库穆尔公路B&P大厦1楼。"
+        },
+        "cambodia": {
+          "name": "柬埔寨",
+          "text": "GTCFX Co., Ltd.持有柬埔寨证券交易监管局（SERC）颁发的衍生品经纪商牌照，编号为043 N.M.K./A.B./Ch.U.，有效期自2026年10月8日至2028年10月7日。注册地址：柬埔寨金边Tuol Kork区Boeung Kak 1分区Phum 13村289街40号楼8楼。"
+        }
+      },
+      "entity": "受监管实体",
+      "hq": "总部 · 迪拜",
+      "count": "{count} 家受监管实体",
+      "pause": "暂停",
+      "play": "播放",
+      "choose": "选择司法管辖区"
+    },
+    "awardsSection": {
+      "title": "GTCFX奖项",
+      "subtitle": "屡获殊荣、以卓越表现获得认可的差价合约经纪商",
+      "description": "GTCFX在多场国际展会及金融活动中获得行业认可，体现了我们对创新、服务质量和卓越全球交易解决方案的承诺。",
+      "viewMore": "查看更多",
+      "prev": "上一组奖项",
+      "next": "下一组奖项",
+      "items": [
+        {
+          "title": "全球最佳流动性提供商",
+          "image": "/awards/1.webp"
+        },
+        {
+          "title": "最佳流动性提供商",
+          "image": "/awards/2.webp"
+        },
+        {
+          "title": "最佳外汇介绍经纪商",
+          "image": "/awards/3.webp"
+        }
+      ],
+      "recognised": "获得行业认可"
+    }
+  },
+  "regulationsPage": {
+    "entities": {
+      "title": "跨[多个司法管辖区]的实体独立监管",
+      "description": "下列实体及关联公司均为独立法律实体。每张牌照仅适用于获颁该牌照的实体，不延伸至任何其他实体、关联公司或GTC品牌整体。客户可获得的产品、服务及监管保障，取决于适用的签约实体、客户所在司法管辖区及其资格。牌照详情可通过相关监管机构的官方登记册核实。",
+      "labels": {
+        "authority": "监管机构",
+        "type": "牌照类型",
+        "licence": "牌照号码",
+        "registration": "注册号码",
+        "company": "公司编号",
+        "validity": "有效期",
+        "address": "注册地址"
+      },
+      "verify": "在{regulator}登记册中核实",
+      "verifySoon": "登记册链接即将提供",
+      "copy": "复制",
+      "copied": "已复制",
+      "items": [
+        {
+          "id": "southAfrica",
+          "code": "ZA",
+          "country": "南非",
+          "city": "开普敦",
+          "name": "GTC Global SA (Pty) Ltd",
+          "short": "FSCA",
+          "number": "FSP 51545",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "南非金融部门行为监管局（FSCA）"
+            },
+            {
+              "id": "type",
+              "value": "金融服务提供商（FSP）"
+            },
+            {
+              "id": "licence",
+              "value": "FSP 51545"
+            },
+            {
+              "id": "registration",
+              "value": "2020/810937/07"
+            },
+            {
+              "id": "address",
+              "value": "南非西开普省开普敦克莱蒙特区卡文迪什路18号，邮编7708。"
+            }
+          ],
+          "registerUrl": "https://www.fsca.co.za"
+        },
+        {
+          "id": "vanuatu",
+          "code": "VU",
+          "country": "瓦努阿图",
+          "city": "维拉港",
+          "name": "GTC Global Trade Capital Co. Limited",
+          "short": "VFSC",
+          "number": "40354",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "瓦努阿图金融服务委员会（VFSC）"
+            },
+            {
+              "id": "type",
+              "value": "自营交易商牌照"
+            },
+            {
+              "id": "licence",
+              "value": "40354"
+            },
+            {
+              "id": "address",
+              "value": "维拉港库穆尔公路B&P大厦1楼"
+            }
+          ],
+          "registerUrl": "https://www.vfsc.vu"
+        },
+        {
+          "id": "comoros",
+          "code": "KM",
+          "country": "科摩罗",
+          "city": "昂儒昂",
+          "name": "GTC Global Trading LTD",
+          "short": "AOFA",
+          "number": "L16283/GTC",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "昂儒昂离岸金融管理局"
+            },
+            {
+              "id": "type",
+              "value": "经纪业务牌照"
+            },
+            {
+              "id": "licence",
+              "value": "L16283/GTC"
+            },
+            {
+              "id": "company",
+              "value": "16283"
+            },
+            {
+              "id": "address",
+              "value": "科摩罗联盟昂儒昂穆察穆杜市Coalancanthe大道"
+            }
+          ],
+          "registerUrl": ""
+        },
+        {
+          "id": "australia",
+          "code": "AU",
+          "country": "澳大利亚",
+          "city": "悉尼",
+          "name": "GTC Global (Australia) Pty Ltd",
+          "short": "ASIC",
+          "number": "496371",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "澳大利亚证券与投资委员会（ASIC）"
+            },
+            {
+              "id": "type",
+              "value": "澳大利亚金融服务牌照"
+            },
+            {
+              "id": "licence",
+              "value": "496371"
+            }
+          ],
+          "registerUrl": "https://asic.gov.au"
+        },
+        {
+          "id": "mauritius",
+          "code": "MU",
+          "country": "毛里求斯",
+          "city": "路易港",
+          "name": "GTC Global Ltd",
+          "short": "FSC",
+          "number": "GB22200292",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "金融服务委员会（FSC）"
+            },
+            {
+              "id": "type",
+              "value": "SEC-2投资交易商"
+            },
+            {
+              "id": "licence",
+              "value": "GB22200292"
+            },
+            {
+              "id": "company",
+              "value": "C188049"
+            }
+          ],
+          "registerUrl": "https://www.fscmauritius.org"
+        },
+        {
+          "id": "cambodia",
+          "code": "KH",
+          "country": "柬埔寨",
+          "city": "金边",
+          "name": "GTCFX Co., Ltd.",
+          "short": "SERC",
+          "number": "043 N.M.K./A.B./Ch.U.",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "柬埔寨证券交易监管局（SERC）"
+            },
+            {
+              "id": "type",
+              "value": "衍生品经纪商"
+            },
+            {
+              "id": "licence",
+              "value": "043 N.M.K./A.B./Ch.U."
+            },
+            {
+              "id": "validity",
+              "value": "2026年10月8日 – 2028年10月7日"
+            },
+            {
+              "id": "address",
+              "value": "柬埔寨金边Tuol Kork区Boeung Kak 1分区Phum 13村289街40号楼8楼"
+            }
+          ],
+          "registerUrl": "https://www.serc.gov.kh"
+        }
+      ]
+    }
+  }
+}

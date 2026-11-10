@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "title": "GTCFX at {expo} | Get a ${amount} trading bonus",
+    "description": "Open a GTC Standard account at {expo} and get a ${amount} USD trading bonus. No deposit needed."
+  },
+  "hero": {
+    "kicker": "Your trading journey starts here",
+    "titleLine1": "A head start.",
+    "titleLine2": "A world of opportunity.",
+    "bonusCurrency": "USD",
+    "bonusLabel": "Trading bonus",
+    "noDeposit": "No deposit needed.",
+    "lead": "Open a GTC Standard account and put your next move into motion with a ${amount} trading bonus.",
+    "terms": "Eligibility and bonus terms apply.",
+    "boothBadge": "Visit us at Booth {booth}",
+    "stepsDetailed": [
+      {
+        "id": "register",
+        "label": "Register",
+        "text": "Fill in the form. It takes about two minutes."
+      },
+      {
+        "id": "activate",
+        "label": "Activate",
+        "text": "Log in and complete your profile to unlock the bonus."
+      },
+      {
+        "id": "trade",
+        "label": "Start trading",
+        "text": "Trade real markets with your ${amount} bonus."
+      }
+    ],
+    "stepsTitle": "How it works",
+    "marketsLabel": "Trade the markets you know",
+    "markets": [
+      "EUR/USD",
+      "Gold",
+      "US30",
+      "GBP/USD",
+      "Oil",
+      "NAS100",
+      "USD/JPY",
+      "Silver",
+      "BTC/USD",
+      "GER40"
+    ]
+  },
+  "form": {
+    "eyebrow": "${amount} welcome bonus",
+    "title": "Register now",
+    "subtitle": "Create your account to claim your ${amount} trading bonus.",
+    "firstName": "First name",
+    "firstNamePlaceholder": "e.g. Alex",
+    "lastName": "Last name",
+    "lastNamePlaceholder": "e.g. Morgan",
+    "phone": "Mobile number",
+    "phonePlaceholder": "50 123 4567",
+    "email": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Send code",
+    "resendIn": "Resend in {seconds}s",
+    "resend": "Resend",
+    "sending": "Sending…",
+    "code": "Verification code",
+    "codeHint": "Enter the 6-digit code we emailed you.",
+    "codeDigit": "Digit {n} of 6",
+    "country": "Country of residence",
+    "countryPlaceholder": "Choose your country",
+    "countriesFailed": "Couldn’t load the country list. Please refresh the page.",
+    "invite": "Invitation code",
+    "optional": "(optional)",
+    "invitePlaceholder": "Enter invitation code",
+    "termsBefore": "I have read and agree to the",
+    "termsLink": "Terms & Conditions",
+    "bonusTermsLink": "Bonus Terms",
+    "and": "and",
+    "agreementLink": "Client Agreement",
+    "submit": "Get my ${amount} bonus",
+    "submitting": "Opening your account…",
+    "secure": "256-bit encrypted. Your details are safe with us.",
+    "progress": "{done} of {total} completed",
+    "errors": {
+      "firstName": "Please enter your first name.",
+      "firstNameLetters": "Use letters only.",
+      "lastName": "Please enter your last name.",
+      "lastNameLetters": "Use letters only.",
+      "email": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "emailRegistered": "This email is already registered. Please log in instead.",
+      "otpRequired": "Enter the 6-digit code from your email.",
+      "otpLength": "The code has 6 digits.",
+      "country": "Please choose your country of residence.",
+      "validCountry": "Please choose a country from the list.",
+      "phone": "Please enter your mobile number.",
+      "phoneInvalid": "Please enter a valid mobile number.",
+      "terms": "Please accept the terms to continue."
+    },
+    "toast": {
+      "otpSent": "We’ve sent a 6-digit code to your email.",
+      "codeError": "We couldn’t send the code. Please try again.",
+      "registrationFailed": "We couldn’t open your account. Please try again."
+    },
+    "passwordNote": "No password to create: we’ll set up your account and email your login details as soon as it’s open."
+  },
+  "success": {
+    "eyebrow": "Registration complete",
+    "title": "Thank you for registering, {name}!",
+    "text": "Please check your email. We’ve sent your username and password for the GTCFX trading portal to {email}.",
+    "textNoEmail": "Your account is open. Your username and password will reach {email} shortly; if they don’t arrive, ask our team at the booth.",
+    "inboxTip": "Can’t find it? Check your spam or junk folder.",
+    "steps": [
+      {
+        "id": "email",
+        "label": "Check your email",
+        "text": "Your username and password are waiting in your inbox."
+      },
+      {
+        "id": "app",
+        "label": "Download the app",
+        "text": "Get “GTCFX: GTC GO” from the App Store or Google Play."
+      },
+      {
+        "id": "trade",
+        "label": "Log in and start trading",
+        "text": "Sign in with your login details, activate your account and trade with your ${amount} bonus."
+      }
+    ],
+    "app": {
+      "title": "Download GTCFX: GTC GO",
+      "text": "Log in with the username and password from your email and start trading from your phone.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "login": "Or log in on the web portal",
+    "another": "Register another visitor"
+  },
+  "benefits": {
+    "kicker": "A better way to begin",
+    "title": "Small start.",
+    "titleAccent": "Real possibilities.",
+    "items": [
+      {
+        "id": "funds",
+        "title": "Real funds. Real markets.",
+        "text": "Use your {amount} USD to trade real markets, not demo simulations. Trade the real financial markets."
+      },
+      {
+        "id": "deposit",
+        "title": "Start without a deposit.",
+        "text": "Test strategies or explore our trading platform. Your funds stay untouched while you use your {amount} USD tradable bonus."
+      },
+      {
+        "id": "next",
+        "title": "Know your next step.",
+        "text": "Register, activate your account, then trade. Review the bonus and withdrawal terms before you begin."
+      }
+    ]
+  },
+  "footer": {
+    "riskTitle": "Risk Warning",
+    "risk": [
+      "Trading in derivatives, including rolling spot Foreign Exchange (FX) and Contracts for Difference (CFDs), is highly speculative, carries a substantial degree of risk, and is not appropriate for every investor. Nothing on this website constitutes investment advice or a recommendation, and it has been prepared without regard to your individual objectives, financial circumstances or needs.",
+      "FX and CFDs are complex instruments dealt on a margined basis and carry a high risk of losing money rapidly by reason of leverage, which magnifies gains and losses alike. You may lose part or all of your invested capital, and losses may exceed your initial investment. Before trading, you should consider your objectives, financial position, level of experience and appetite for risk, satisfy yourself that you understand how these products operate, and trade only with funds you can afford to lose. Seek independent financial or tax advice if in any doubt. Past performance is not indicative of future results.",
+      "The entity with which a client contracts will depend on the client's jurisdiction, eligibility, classification and onboarding route. The applicable contracting entity and, where relevant, the product issuer and/or counterparty will be clearly disclosed before the client submits an account application and will be identified in the relevant Client Agreement. Products and services available under one entity may not be available under another entity. Each entity within the GTC Financial Group is a separate legal entity. A licence held by one entity does not extend to any other entity within the group.",
+      "GTC Global Trading Ltd, is a company incorporated in Anjouan, Union of the Comoros (Company No. 16283) and licensed by the Anjouan Offshore Finance Authority under Licence No. L16283/GTC. Its registered address is Boulevard de Coalancanthe, Mutsamudu, Anjouan, Union of the Comoros.",
+      "GTC Global Trade Capital Co. Limited (Company No. 40354) is a company incorporated in Vanuatu. The company holds Class A, Class B and Class C Principal's Licences issued by the Vanuatu Financial Services Commission under the Financial Dealers Licensing Act [CAP. 70]. Its registered address is First Floor, B&P House, Kumul Highway, Port Vila, Vanuatu.",
+      "GTC Global Ltd is a company incorporated in Mauritius (Company No. C188049), holding a Global Business Licence, and authorised and regulated by the Financial Services Commission, Mauritius (FSC) as an Investment Dealer (Full Service Dealer, excluding Underwriting) / SEC-2.1B, Licence No. GB22200292, pursuant to Section 29 of the Securities Act 2005, Rule 4 of the Securities (Licensing) Rules 2007, and the Financial Services (Consolidated Licensing and Fees) Rules 2008. Its registered office and principal place of business is Ground Floor, The Catalyst, Silicon Avenue, 40 Cybercity, 72201 Ebene, Republic of Mauritius.",
+      "Services offered through this international website are not available to residents of the United States, Japan, Australia, or in any jurisdiction where the provision of those services would contravene applicable laws, regulations, or sanctions."
+    ],
+    "copyright": "© {year} GTCFX. All rights reserved."
+  },
+  "stats": {
+    "items": [
+      {
+        "value": 985000,
+        "prefix": "",
+        "suffix": "+",
+        "label": "Served Clients"
+      },
+      {
+        "value": 7,
+        "prefix": "",
+        "suffix": "+",
+        "label": "Trading Markets"
+      },
+      {
+        "value": 20,
+        "prefix": "",
+        "suffix": "+",
+        "label": "Languages Supported"
+      },
+      {
+        "value": 850,
+        "prefix": "$",
+        "suffix": " Billion",
+        "label": "Monthly Trades"
+      }
+    ]
+  },
+  "platforms": {
+    "eyebrow": "Platforms",
+    "title": "Trade Anywhere, On Any Device",
+    "subtitle": "Choose the platform that fits your style — on mobile, desktop or web.",
+    "items": [
+      {
+        "key": "gtcgo",
+        "brand": "GTC Go",
+        "title": "GTC Go – Trade & Invest",
+        "tagline": "Our own app for trading and investing on the go",
+        "cta": "Download GTC Go"
+      },
+      {
+        "key": "mt5",
+        "brand": "MetaTrader 5",
+        "title": "MT5 Trading Platform",
+        "tagline": "Advanced tools for modern trading",
+        "cta": "Download MT5 Platform"
+      },
+      {
+        "key": "mt4",
+        "brand": "MetaTrader 4",
+        "title": "MT4 Trading Platform",
+        "tagline": "A trusted and classic trading platform",
+        "cta": "Download MT4 Platform"
+      }
+    ],
+    "features": [
+      "Windows · macOS · Web",
+      "iOS · Android",
+      "One-click trading"
+    ],
+    "perks": [
+      "<10ms execution",
+      "Leverage up to 1:2000",
+      "24/5 trading"
+    ]
+  },
+  "faq": {
+    "eyebrow": "Before you sign up",
+    "titleA": "Questions about",
+    "titleB": "your bonus?",
+    "subtitle": "Here’s what visitors ask us most. Still unsure? Our team at the booth is happy to help.",
+    "contact": "Contact us",
+    "items": [
+      {
+        "q": "Do I need to deposit to get the ${amount} bonus?",
+        "a": "No. Open a GTC Standard account through this page and the ${amount} USD trading bonus is added once your account is activated. No deposit is needed."
+      },
+      {
+        "q": "Why don’t I choose a password?",
+        "a": "To keep sign-up quick, we create a secure password for you and email it with your login details as soon as your account is open. Change it after your first login."
+      },
+      {
+        "q": "How do I activate my account?",
+        "a": "Log in to the client portal with the details we emailed you, complete your profile and verify your identity. The bonus is unlocked once verification is approved."
+      },
+      {
+        "q": "What can I trade with the bonus?",
+        "a": "Use it to trade real markets: forex, metals, energy, indices and more, on MetaTrader 4, MetaTrader 5 or the GTC Go app."
+      },
+      {
+        "q": "Can I withdraw the bonus?",
+        "a": "The bonus itself is for trading. Profits you make with it can be withdrawn according to the bonus terms. Please read the Bonus Terms before you start."
+      },
+      {
+        "q": "I didn’t get the email. What now?",
+        "a": "Check your spam or junk folder first. If it still hasn’t arrived, ask our team at the booth or email support and we’ll resend your details."
+      }
+    ],
+    "languages": "20+ languages",
+    "questions": "Questions"
+  },
+  "companyPage": {
+    "legalSection": {
+      "title": "Legal Information",
+      "subtitle": "GTCFX Regulation",
+      "description": "GTC Group owns the following entities globally, together the GTC Financial Group. Each of these entities provides financial services according to their respective licences in the relevant jurisdiction.",
+      "viewMore": "View More",
+      "entities": {
+        "australia": {
+          "name": "Australia",
+          "text": "GTC Global (Australia) Pty Ltd holds an Australian Financial Services Licence number 496371. GTC Global (Australia) focuses on providing education services to Australian clients."
+        },
+        "mauritius": {
+          "name": "Mauritius",
+          "text": "GTC Global Ltd. is a limited company incorporated in Mauritius (company number: C188049) and licensed by the Financial Services Commission, Mauritius (No. GB22200292) to trade as an SEC-2."
+        },
+        "southAfrica": {
+          "name": "South Africa",
+          "text": "GTC Global SA (Pty) Ltd (Company No. 2020/810937/07) is an authorised financial services provider (FSP No. 51545). Its registered address is 18 Cavendish Road, Claremont, Cape Town, Western Cape, 7708, South Africa. The company is neither a market maker nor a product issuer and acts solely as an intermediary under the Financial Advisory and Intermediary Services Act, 2002 (FAIS)."
+        },
+        "vanuatu": {
+          "name": "Vanuatu",
+          "text": "GTC Global Trade Capital Co. Limited, is a global finance brokerage company registered, supervised, and authorized by the Vanuatu Financial Services Commission of the Republic of Vanuatu Company license number: 40354. Registered address: 1/Floor, B&P House, Kumul Highway, Port Vila, Vanuatu."
+        },
+        "cambodia": {
+          "name": "Cambodia",
+          "text": "GTCFX Co., Ltd. is licensed by the Securities and Exchange Regulator of Cambodia (SERC) as a Derivative Broker under licence number 043 N.M.K./A.B./Ch.U., valid from 8 October 2026 to 7 October 2028. Registered address: Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia."
+        }
+      },
+      "entity": "Regulated entity",
+      "hq": "Head office · Dubai",
+      "count": "{count} regulated entities",
+      "pause": "Pause",
+      "play": "Play",
+      "choose": "Choose a jurisdiction"
+    },
+    "awardsSection": {
+      "title": "GTCFX Awards",
+      "subtitle": "Award-Winning CFD Broker Recognized for Excellence",
+      "description": "GTCFX has earned industry recognition across multiple international expos and financial events, reflecting our commitment to innovation, service quality, and excellence in global trading solutions.",
+      "viewMore": "View More",
+      "prev": "Previous awards",
+      "next": "Next awards",
+      "items": [
+        {
+          "title": "Best Liquidity Provider Globally",
+          "image": "/awards/1.webp"
+        },
+        {
+          "title": "Best Liquidity Provider",
+          "image": "/awards/2.webp"
+        },
+        {
+          "title": "Best Forex Introducing Broker",
+          "image": "/awards/3.webp"
+        }
+      ],
+      "recognised": "Recognised by the industry"
+    }
+  },
+  "regulationsPage": {
+    "entities": {
+      "title": "Entity-Specific Regulation Across [Multiple Jurisdictions]",
+      "description": "The entities and affiliates listed below are separate legal entities. Each licence applies solely to the entity to which it was issued and does not extend to any other entity, affiliate, or the GTC brand generally. The products, services and regulatory protections available to a client depend on the applicable contracting entity, the client's jurisdiction and eligibility. Licence details may be verified through the relevant regulator's official register.",
+      "labels": {
+        "authority": "Regulator",
+        "type": "Licence Type",
+        "licence": "Licence No.",
+        "registration": "Registration No.",
+        "company": "Company No.",
+        "validity": "Validity Period",
+        "address": "Registered Address"
+      },
+      "verify": "Verify on {regulator} register",
+      "verifySoon": "Register link coming soon",
+      "copy": "Copy",
+      "copied": "Copied",
+      "items": [
+        {
+          "id": "southAfrica",
+          "code": "ZA",
+          "country": "South Africa",
+          "city": "Cape Town",
+          "name": "GTC Global SA (Pty) Ltd",
+          "short": "FSCA",
+          "number": "FSP 51545",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Financial Sector Conduct Authority (FSCA)"
+            },
+            {
+              "id": "type",
+              "value": "Financial Services Provider (FSP)"
+            },
+            {
+              "id": "licence",
+              "value": "FSP 51545"
+            },
+            {
+              "id": "registration",
+              "value": "2020/810937/07"
+            },
+            {
+              "id": "address",
+              "value": "18 Cavendish Road, Claremont, Cape Town, Western Cape, 7708, South Africa."
+            }
+          ],
+          "registerUrl": "https://www.fsca.co.za"
+        },
+        {
+          "id": "vanuatu",
+          "code": "VU",
+          "country": "Vanuatu",
+          "city": "Port Vila",
+          "name": "GTC Global Trade Capital Co. Limited",
+          "short": "VFSC",
+          "number": "40354",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Vanuatu Financial Services Commission (VFSC)"
+            },
+            {
+              "id": "type",
+              "value": "Principal's Dealer License"
+            },
+            {
+              "id": "licence",
+              "value": "40354"
+            },
+            {
+              "id": "address",
+              "value": "1/Floor, B&P House, Kumul Highway, Port Vila"
+            }
+          ],
+          "registerUrl": "https://www.vfsc.vu"
+        },
+        {
+          "id": "comoros",
+          "code": "KM",
+          "country": "Comoros",
+          "city": "Anjouan",
+          "name": "GTC Global Trading LTD",
+          "short": "AOFA",
+          "number": "L16283/GTC",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Anjouan Offshore Finance Authority"
+            },
+            {
+              "id": "type",
+              "value": "Brokerage License"
+            },
+            {
+              "id": "licence",
+              "value": "L16283/GTC"
+            },
+            {
+              "id": "company",
+              "value": "16283"
+            },
+            {
+              "id": "address",
+              "value": "Boulevard de Coalancanthe, Mutsamudu, Anjouan, Union of the Comoros"
+            }
+          ],
+          "registerUrl": ""
+        },
+        {
+          "id": "australia",
+          "code": "AU",
+          "country": "Australia",
+          "city": "Sydney",
+          "name": "GTC Global (Australia) Pty Ltd",
+          "short": "ASIC",
+          "number": "496371",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Australian Securities & Investments Commission (ASIC)"
+            },
+            {
+              "id": "type",
+              "value": "Australian Financial Services License"
+            },
+            {
+              "id": "licence",
+              "value": "496371"
+            }
+          ],
+          "registerUrl": "https://asic.gov.au"
+        },
+        {
+          "id": "mauritius",
+          "code": "MU",
+          "country": "Mauritius",
+          "city": "Port Louis",
+          "name": "GTC Global Ltd",
+          "short": "FSC",
+          "number": "GB22200292",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Financial Services Commission (FSC)"
+            },
+            {
+              "id": "type",
+              "value": "SEC-2 Investment Dealer"
+            },
+            {
+              "id": "licence",
+              "value": "GB22200292"
+            },
+            {
+              "id": "company",
+              "value": "C188049"
+            }
+          ],
+          "registerUrl": "https://www.fscmauritius.org"
+        },
+        {
+          "id": "cambodia",
+          "code": "KH",
+          "country": "Cambodia",
+          "city": "Phnom Penh",
+          "name": "GTCFX Co., Ltd.",
+          "short": "SERC",
+          "number": "043 N.M.K./A.B./Ch.U.",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Securities and Exchange Regulator of Cambodia (SERC)"
+            },
+            {
+              "id": "type",
+              "value": "Derivative Broker"
+            },
+            {
+              "id": "licence",
+              "value": "043 N.M.K./A.B./Ch.U."
+            },
+            {
+              "id": "validity",
+              "value": "8 October 2026 – 7 October 2028"
+            },
+            {
+              "id": "address",
+              "value": "Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia"
+            }
+          ],
+          "registerUrl": "https://www.serc.gov.kh"
+        }
+      ]
+    }
+  }
+}
