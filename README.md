@@ -63,4 +63,6 @@ front of the site. For a booth where the language is known, print the `/uz` or `
   Awards, Regulation, Platforms and an expo FAQ. Their links open gtcfx.com in the same language
   (`components/shared/nav/NavLink.jsx`).
 
-Links like `?ref=CODE` or `?code=CODE` prefill and lock the invitation code (same as the main site).
+Every account is opened under `EXPO.inviteCode` (`src/config/expo.js`); with `forceInviteCode: true` the server ignores any
+code in the link or form and the form has no invitation field. Set `forceInviteCode: false` to let `?ref=CODE` /
+`?code=CODE` links prefill and lock a code instead (same as the main site), with `inviteCode` as the default.

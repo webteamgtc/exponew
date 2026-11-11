@@ -5,8 +5,10 @@
  *   city, kind     and in the welcome e-mail (no expo logo: it changes every show)
  *   booth          shown as "Visit us at Booth …" when set
  *   bonus          the welcome bonus shown on the page, the button and in the e-mail
- *   inviteCode     sent as the invitation (IB / partner) code when the visitor leaves the field empty, so every
- *                  account opened at the booth is tagged to the expo. A code in the link (?ref=, ?code=…) wins.
+ *   inviteCode     the invitation (IB / partner) code every account opened on this page is registered under.
+ *   forceInviteCode  true: the server always uses inviteCode (a ?ref= link or a typed code cannot change it) and the form
+ *                  hides the invitation field. false: inviteCode is only the default when the visitor gives none, and
+ *                  a code in the link (?ref=, ?code=…) or typed in the form wins.
  */
 export const EXPO = {
   name: 'Traders Fair 2026 - Uzbekistan',
@@ -16,7 +18,8 @@ export const EXPO = {
   booth: '',
   bonus: 50,
   currency: 'USD',
-  inviteCode: '',
+  inviteCode: 'Xmu69pW9',
+  forceInviteCode: true,
   termsUrl: 'https://www.gtcfx.com/terms',
   bonusTermsUrl: 'https://www.gtcfx.com/terms',
   clientAgreementUrl: 'https://www.gtcfx.com/terms',

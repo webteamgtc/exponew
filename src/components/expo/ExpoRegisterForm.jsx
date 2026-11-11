@@ -6,7 +6,8 @@
  * Fields: first + last name, mobile, email + code, country, invitation code, terms. No password to choose: the server
  * creates one, opens the account with it and e-mails the login details in the visitor's language (/api/expo/register).
  *
- * Invitation code: from the link (?code, ?ref → locked; ?partner_id, ?partner_code, ?ib), else typed, else EXPO.inviteCode.
+ * Invitation code: EXPO.inviteCode always when EXPO.forceInviteCode is on (the field is hidden); otherwise from the link
+ * (?code, ?ref → locked; ?partner_id, ?partner_code, ?ib), else typed, else EXPO.inviteCode.
  * After a successful registration the card shows the success panel; "Register another visitor" clears it for the next
  * person (the booth tablet flow).
  * Messages (code sent, email already registered, errors) are react-toastify toasts (<Toaster /> on the page).
@@ -300,19 +301,21 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
                 </div>
               </Field>
 
-              <Field
-                id="expo-invite"
-                label={
-                  <>
-                    {t('invite')} <span className="font-normal text-ink/40">{t('optional')}</span>
-                  </>
-                }
-              >
-                <div className={cn(box, boxState(false), inviteLocked && 'bg-brand-50/60')}>
-                  <Ticket className="size-4 shrink-0 text-ink/35" />
-                  <input id="expo-invite" className={input} value={values.invite} onChange={set('invite')} readOnly={inviteLocked} placeholder={t('invitePlaceholder')} autoComplete="off" />
-                </div>
-              </Field>
+              {!EXPO.forceInviteCode && (
+                <Field
+                  id="expo-invite"
+                  label={
+                    <>
+                      {t('invite')} <span className="font-normal text-ink/40">{t('optional')}</span>
+                    </>
+                  }
+                >
+                  <div className={cn(box, boxState(false), inviteLocked && 'bg-brand-50/60')}>
+                    <Ticket className="size-4 shrink-0 text-ink/35" />
+                    <input id="expo-invite" className={input} value={values.invite} onChange={set('invite')} readOnly={inviteLocked} placeholder={t('invitePlaceholder')} autoComplete="off" />
+                  </div>
+                </Field>
+              )}
 
               <p className="flex items-start gap-3 rounded-xl bg-brand-50/70 px-3.5 py-3 text-xs leading-relaxed text-brand">
                 <KeyRound className="mt-0.5 size-4 shrink-0" />

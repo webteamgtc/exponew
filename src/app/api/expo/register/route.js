@@ -50,7 +50,8 @@ export async function POST(req) {
   const area = clean(body.area, 6).replace(/\D/g, '');
   const country = clean(body.country, 80);
   const code = clean(body.code, 6).replace(/\D/g, '');
-  const invite = clean(body.invite, 40) || EXPO.inviteCode;
+  // with forceInviteCode every account goes under the expo's code, whatever the browser sends
+  const invite = EXPO.forceInviteCode && EXPO.inviteCode ? EXPO.inviteCode : clean(body.invite, 40) || EXPO.inviteCode;
   const deepLink = clean(body.deepLink, 200);
   const lang = langOf(clean(body.locale, 10));
 
