@@ -11,7 +11,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, animate, motion, useInView, useMotionValue, useReducedMotion } from 'motion/react';
 import { ArrowUpRight, Check, Copy, Pause, Play, ShieldCheck } from 'lucide-react';
-import { ZA, VU, KM, AU, MU, KH } from 'country-flag-icons/react/3x2';
+import { AE, ZA, VU, KM, AU, MU, KH } from 'country-flag-icons/react/3x2';
 import ArrowLink from '@/components/shared/ArrowLink';
 import { AccentTitle } from '@/components/shared/SectionIntro';
 import { Reveal, EASE } from '@/components/motion';
@@ -19,9 +19,10 @@ import { goToForm } from '@/components/expo/goToForm';
 import { cn } from '@/lib/utils';
 import { mapDots, project } from './mapDots';
 
-const FLAGS = { ZA, VU, KM, AU, MU, KH };
+const FLAGS = { AE, ZA, VU, KM, AU, MU, KH };
 /** lon, lat of each entity's city (same as the main site's regulations map) */
 const GEO = {
+  uae: [55.3, 25.2], // Dubai, the head office itself: no arc is drawn to it
   southAfrica: [18.4, -33.9],
   comoros: [44.4, -12.2],
   mauritius: [57.5, -20.2],
@@ -202,6 +203,7 @@ function WorldMap({ items, active, onPick, hqLabel, play }) {
   const pins = items.map((e) => ({ ...e, p: project(...GEO[e.id]) }));
   const a = pins[active].p;
   const dist = Math.hypot(a.x - HQ.x, a.y - HQ.y);
+  const atHq = dist < 0.5;
   const arc = `M ${HQ.x} ${HQ.y} Q ${(HQ.x + a.x) / 2} ${Math.min(HQ.y, a.y) - dist * 0.45} ${a.x} ${a.y}`;
 
   return (
@@ -231,21 +233,25 @@ function WorldMap({ items, active, onPick, hqLabel, play }) {
         {/* gold spotlight that glides to the selected pin */}
         <motion.circle r="9" fill="url(#legal-spot)" initial={false} animate={{ cx: a.x, cy: a.y }} transition={{ type: 'spring', stiffness: 60, damping: 16 }} />
 
-        {/* arc from the head office, with a travelling spark */}
-        <motion.path
-          key={`arc-${active}`}
-          d={arc}
-          fill="none"
-          stroke="url(#legal-arc)"
-          strokeWidth="0.35"
-          strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 1.1, ease: EASE }}
-        />
-        <circle key={`spark-${active}`} r="0.55" fill="#ffffff">
-          <animateMotion dur="2.2s" repeatCount="indefinite" path={arc} />
-        </circle>
+        {/* arc from the head office, with a travelling spark (none when the entity is the head office) */}
+        {!atHq && (
+          <>
+            <motion.path
+              key={`arc-${active}`}
+              d={arc}
+              fill="none"
+              stroke="url(#legal-arc)"
+              strokeWidth="0.35"
+              strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 1.1, ease: EASE }}
+            />
+            <circle key={`spark-${active}`} r="0.55" fill="#ffffff">
+              <animateMotion dur="2.2s" repeatCount="indefinite" path={arc} />
+            </circle>
+          </>
+        )}
       </svg>
 
       {/* head office */}

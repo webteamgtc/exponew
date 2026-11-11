@@ -296,6 +296,10 @@
         "cambodia": {
           "name": "柬埔寨",
           "text": "GTCFX Co., Ltd.持有柬埔寨证券交易监管局（SERC）颁发的衍生品经纪商牌照，编号为043 N.M.K./A.B./Ch.U.，有效期自2026年10月8日至2028年10月7日。注册地址：柬埔寨金边Tuol Kork区Boeung Kak 1分区Phum 13村289街40号楼8楼。"
+        },
+        "uae": {
+          "name": "阿联酋",
+          "text": "GTC Financial Consultancy LLC 获阿联酋资本市场管理局（CMA）颁发牌照，牌照编号 20200000512（第一类：证券交易），有效期至 2027 年 12 月 31 日。"
         }
       },
       "entity": "受监管实体",
@@ -340,13 +344,46 @@
         "registration": "注册号码",
         "company": "公司编号",
         "validity": "有效期",
-        "address": "注册地址"
+        "address": "注册地址",
+        "activities": "持牌业务"
       },
       "verify": "在{regulator}登记册中核实",
       "verifySoon": "登记册链接即将提供",
       "copy": "复制",
       "copied": "已复制",
       "items": [
+        {
+          "id": "uae",
+          "code": "AE",
+          "country": "阿联酋",
+          "city": "迪拜",
+          "name": "GTC Financial Consultancy LLC",
+          "short": "CMA",
+          "number": "20200000512",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "资本市场管理局（CMA）"
+            },
+            {
+              "id": "type",
+              "value": "第一类：证券交易"
+            },
+            {
+              "id": "licence",
+              "value": "20200000512"
+            },
+            {
+              "id": "validity",
+              "value": "2026年11月9日 – 2027年12月31日"
+            },
+            {
+              "id": "activities",
+              "value": "国际市场交易经纪商；场外衍生品及现货市场货币交易经纪商"
+            }
+          ],
+          "registerUrl": "https://www.uaecma.gov.ae/en/open-data/licensed-companies.aspx"
+        },
         {
           "id": "southAfrica",
           "code": "ZA",

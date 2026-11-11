@@ -296,6 +296,10 @@
         "cambodia": {
           "name": "Cambodia",
           "text": "GTCFX Co., Ltd. is licensed by the Securities and Exchange Regulator of Cambodia (SERC) as a Derivative Broker under licence number 043 N.M.K./A.B./Ch.U., valid from 8 October 2026 to 7 October 2028. Registered address: Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia."
+        },
+        "uae": {
+          "name": "United Arab Emirates",
+          "text": "GTC Financial Consultancy LLC is licensed by the Capital Market Authority (CMA) of the United Arab Emirates under licence number 20200000512 (First category: Dealing in securities), valid until 31 December 2027."
         }
       },
       "entity": "Regulated entity",
@@ -340,13 +344,46 @@
         "registration": "Registration No.",
         "company": "Company No.",
         "validity": "Validity Period",
-        "address": "Registered Address"
+        "address": "Registered Address",
+        "activities": "Licensed Activities"
       },
       "verify": "Verify on {regulator} register",
       "verifySoon": "Register link coming soon",
       "copy": "Copy",
       "copied": "Copied",
       "items": [
+        {
+          "id": "uae",
+          "code": "AE",
+          "country": "United Arab Emirates",
+          "city": "Dubai",
+          "name": "GTC Financial Consultancy LLC",
+          "short": "CMA",
+          "number": "20200000512",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Capital Market Authority (CMA)"
+            },
+            {
+              "id": "type",
+              "value": "First category: Dealing in securities"
+            },
+            {
+              "id": "licence",
+              "value": "20200000512"
+            },
+            {
+              "id": "validity",
+              "value": "9 November 2026 – 31 December 2027"
+            },
+            {
+              "id": "activities",
+              "value": "Trading broker in the international markets; Trading broker of OTC derivatives and currencies in the spot market"
+            }
+          ],
+          "registerUrl": "https://www.uaecma.gov.ae/en/open-data/licensed-companies.aspx"
+        },
         {
           "id": "southAfrica",
           "code": "ZA",

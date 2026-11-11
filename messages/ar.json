@@ -296,6 +296,10 @@
         "cambodia": {
           "name": "كمبوديا",
           "text": "GTCFX Co., Ltd. مرخّصة من هيئة تنظيم الأوراق المالية والبورصات في كمبوديا (SERC) بصفتها وسيط مشتقات، بموجب الترخيص رقم 043 N.M.K./A.B./Ch.U.، الساري من 8 أكتوبر 2026 إلى 7 أكتوبر 2028. العنوان المسجّل: Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia."
+        },
+        "uae": {
+          "name": "الإمارات العربية المتحدة",
+          "text": "GTC Financial Consultancy LLC مرخّصة من هيئة سوق المال (CMA) في دولة الإمارات العربية المتحدة بموجب الترخيص رقم 20200000512 (الفئة الأولى: التعامل في الأوراق المالية)، وهو ساري حتى 31 ديسمبر 2027."
         }
       },
       "entity": "كيان منظَّم",
@@ -340,13 +344,46 @@
         "registration": "رقم التسجيل",
         "company": "رقم الشركة",
         "validity": "مدة الصلاحية",
-        "address": "العنوان المسجّل"
+        "address": "العنوان المسجّل",
+        "activities": "الأنشطة المرخّصة"
       },
       "verify": "التحقق عبر سجل {regulator}",
       "verifySoon": "سيتوفر رابط السجل قريبًا",
       "copy": "نسخ",
       "copied": "تم النسخ",
       "items": [
+        {
+          "id": "uae",
+          "code": "AE",
+          "country": "الإمارات العربية المتحدة",
+          "city": "دبي",
+          "name": "GTC Financial Consultancy LLC",
+          "short": "CMA",
+          "number": "20200000512",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "هيئة سوق المال (CMA)"
+            },
+            {
+              "id": "type",
+              "value": "الفئة الأولى: التعامل في الأوراق المالية"
+            },
+            {
+              "id": "licence",
+              "value": "20200000512"
+            },
+            {
+              "id": "validity",
+              "value": "9 نوفمبر 2026 – 31 ديسمبر 2027"
+            },
+            {
+              "id": "activities",
+              "value": "وسيط تداول في الأسواق العالمية؛ وسيط تداول عقود المشتقات غير المنظمة والعملات في السوق الفوري"
+            }
+          ],
+          "registerUrl": "https://www.uaecma.gov.ae/en/open-data/licensed-companies.aspx"
+        },
         {
           "id": "southAfrica",
           "code": "ZA",

@@ -296,6 +296,10 @@
         "cambodia": {
           "name": "Kambodja",
           "text": "GTCFX Co., Ltd. Kambodja Qimmatli qogʻozlar va birjalar tartibga soluvchisi (SERC) tomonidan 043 N.M.K./A.B./Ch.U. raqamli litsenziya asosida Derivativ broker sifatida litsenziyalangan; litsenziya 2026-yil 8-oktabrdan 2028-yil 7-oktabrgacha amal qiladi. Roʻyxatdan oʻtgan manzili: Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia."
+        },
+        "uae": {
+          "name": "Birlashgan Arab Amirliklari",
+          "text": "GTC Financial Consultancy LLC Birlashgan Arab Amirliklari Kapital bozori boshqarmasi (CMA) tomonidan 20200000512-raqamli litsenziya asosida (birinchi toifa: qimmatli qogʻozlar bilan dilerlik) litsenziyalangan; litsenziya 2027-yil 31-dekabrgacha amal qiladi."
         }
       },
       "entity": "Tartibga solinadigan yuridik shaxs",
@@ -340,13 +344,46 @@
         "registration": "Roʻyxatdan oʻtish raqami",
         "company": "Kompaniya raqami",
         "validity": "Amal qilish muddati",
-        "address": "Roʻyxatdan oʻtgan manzil"
+        "address": "Roʻyxatdan oʻtgan manzil",
+        "activities": "Litsenziyalangan faoliyat turlari"
       },
       "verify": "{regulator} reyestrida tekshirish",
       "verifySoon": "Reyestr havolasi tez orada qoʻshiladi",
       "copy": "Nusxalash",
       "copied": "Nusxalandi",
       "items": [
+        {
+          "id": "uae",
+          "code": "AE",
+          "country": "Birlashgan Arab Amirliklari",
+          "city": "Dubay",
+          "name": "GTC Financial Consultancy LLC",
+          "short": "CMA",
+          "number": "20200000512",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Kapital bozori boshqarmasi (CMA)"
+            },
+            {
+              "id": "type",
+              "value": "Birinchi toifa: qimmatli qogʻozlar bilan dilerlik"
+            },
+            {
+              "id": "licence",
+              "value": "20200000512"
+            },
+            {
+              "id": "validity",
+              "value": "2026-yil 9-noyabr – 2027-yil 31-dekabr"
+            },
+            {
+              "id": "activities",
+              "value": "Xalqaro bozorlarda savdo brokeri; spot bozorda birjadan tashqari (OTC) derivativlar va valyutalar boʻyicha savdo brokeri"
+            }
+          ],
+          "registerUrl": "https://www.uaecma.gov.ae/en/open-data/licensed-companies.aspx"
+        },
         {
           "id": "southAfrica",
           "code": "ZA",
