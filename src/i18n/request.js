@@ -6,7 +6,7 @@ import { langOf } from './locales';
 /**
  * Same rules as the main site (gtcrevamp2: src/i18n/request.js): every website language is a route (/en-intl, /ar,
  * /zh…, see locales.js); the text comes from messages/<lang>.json and any key missing in a language falls back to
- * English. English, Arabic and Chinese are translated, like the main site; the other languages show English for now.
+ * English. English, Arabic, Chinese, Uzbek and Russian are translated; the other languages show English for now.
  */
 function merge(base, extra) {
   if (Array.isArray(base) && Array.isArray(extra)) return extra.map((item, i) => (i < base.length ? merge(base[i], item) : item));

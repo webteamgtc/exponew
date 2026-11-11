@@ -2,7 +2,7 @@
  * Welcome e-mail after an account is opened on the expo page (/api/expo/register): the login details (the password is
  * created on the server and only ever sent here), a button to the client portal and the next steps for the bonus.
  * Same look as the main site's welcome e-mail (gtcrevamp2: src/lib/emails/liveAccountWelcome.js).
- * English, Arabic and Chinese like the site; other languages get English. Returns { subject, html, text }.
+ * English, Arabic, Chinese, Uzbek and Russian; other languages get English. Returns { subject, html, text }.
  */
 const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
@@ -83,6 +83,58 @@ const COPY = {
       `公司名称：GTC FX / 网站：www.gtcfx.com / 邮箱：${support}`,
       `您收到此邮件，是因为此邮箱地址被用于在 GTCFX 开设账户。如非本人操作，请联系 ${support}。`,
       '免责声明：本邮件内容仅供一般参考，不构成个人财务建议。差价合约投资存在重大风险，未必适合所有投资者。'
+    ]
+  },
+  uz: {
+    dir: 'ltr',
+    subject: 'GTCFX — xush kelibsiz: kirish maʼlumotlaringiz',
+    banner: 'Hisobingiz tayyor',
+    dear: (n) => `Hurmatli ${n},`,
+    intro: (expo, amount) => `${expo} doirasida GTC Standard hisobini ochganingiz uchun rahmat. Sizning $${amount} savdo bonusingiz kutmoqda: uni faollashtirish uchun quyidagi maʼlumotlar bilan tizimga kiring.`,
+    steps: (amount) => [
+      ['Mijozlar portaliga kiring', 'Tizimga kirish uchun quyidagi maʼlumotlardan foydalaning.'],
+      ['Hisobingizni faollashtiring', 'Bonusni ochish uchun profilingizni toʻldiring va shaxsingizni tasdiqlang.'],
+      ['Savdoni boshlang', `$${amount} savdo bonusi bilan real bozorlarda savdo qiling.`]
+    ],
+    details: 'Kirish maʼlumotlaringiz',
+    url: 'Kirish havolasi',
+    email: 'Elektron pochta',
+    password: 'Parol',
+    button: 'Hisobimga kirish',
+    safe: '<strong>Hisobingiz xavfsizligini taʼminlang:</strong> birinchi kirishdan soʻng parolni oʻzgartiring, shundan keyin ushbu xatni oʻchirib tashlang va kirish maʼlumotlaringizni hech kimga bermang. GTCFX hech qachon sizdan parolingizni soʻramaydi.',
+    questions: 'Savollaringiz boʻlsa, biz bilan bogʻlaning:',
+    regards: 'Hurmat bilan,',
+    team: 'GTCFX jamoasi',
+    footer: (support) => [
+      `Kompaniya nomi: GTC FX / Veb-sayt: www.gtcfx.com / Elektron pochta: ${support}`,
+      `Siz ushbu xatni ushbu manzil GTCFX da hisob ochish uchun ishlatilgani sababli oldingiz. Agar bu siz boʻlmasangiz, iltimos, ${support} bilan bogʻlaning.`,
+      'Ogohlantirish: ushbu xatdagi maʼlumotlar faqat umumiy maqsadlar uchun moʻljallangan va shaxsiy moliyaviy maslahat hisoblanmaydi. Farq uchun shartnomalar (CFD) mahsulotlariga sarmoya kiritish sezilarli xavflarga ega va barcha investorlar uchun mos kelmasligi mumkin.'
+    ]
+  },
+  ru: {
+    dir: 'ltr',
+    subject: 'Добро пожаловать в GTCFX — ваши данные для входа',
+    banner: 'Ваш счёт готов',
+    dear: (n) => `Уважаемый(ая) ${n},`,
+    intro: (expo, amount) => `Спасибо, что открыли счёт GTC Standard у нас на ${expo}. Ваш торговый бонус $${amount} ждёт вас: войдите с указанными ниже данными, чтобы активировать его.`,
+    steps: (amount) => [
+      ['Войдите в клиентский портал', 'Используйте указанные ниже данные для входа.'],
+      ['Активируйте счёт', 'Заполните профиль и подтвердите личность, чтобы разблокировать бонус.'],
+      ['Начните торговать', `Торгуйте на реальных рынках с торговым бонусом $${amount}.`]
+    ],
+    details: 'Ваши данные для входа',
+    url: 'Адрес входа',
+    email: 'Эл. почта',
+    password: 'Пароль',
+    button: 'Войти в мой счёт',
+    safe: '<strong>Берегите свой счёт:</strong> смените пароль после первого входа, затем удалите это письмо и никому не сообщайте свои данные для входа. GTCFX никогда не запрашивает ваш пароль.',
+    questions: 'Если у вас есть вопросы, свяжитесь с нами:',
+    regards: 'С уважением,',
+    team: 'Команда GTCFX',
+    footer: (support) => [
+      `Название компании: GTC FX / Сайт: www.gtcfx.com / Эл. почта: ${support}`,
+      `Вы получили это письмо, потому что этот адрес был использован для открытия счёта в GTCFX. Если это были не вы, свяжитесь с ${support}.`,
+      'Отказ от ответственности: информация в этом письме носит общий характер и не является персональной финансовой консультацией. Инвестиции в контракты на разницу сопряжены со значительными рисками и могут подойти не всем инвесторам.'
     ]
   }
 };

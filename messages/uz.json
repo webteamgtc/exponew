@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "title": "GTCFX {expo} doirasida | ${amount} savdo bonusini oling",
+    "description": "{expo} doirasida GTC Standard hisobini oching va {amount} USD savdo bonusini oling. Depozit talab qilinmaydi."
+  },
+  "hero": {
+    "kicker": "Savdo yoʻlingiz shu yerdan boshlanadi",
+    "titleLine1": "Ajoyib start.",
+    "titleLine2": "Imkoniyatlar olami.",
+    "bonusCurrency": "USD",
+    "bonusLabel": "Savdo bonusi",
+    "noDeposit": "Depozit talab qilinmaydi.",
+    "lead": "GTC Standard hisobini oching va ${amount} savdo bonusi bilan keyingi qadamingizni boshlang.",
+    "terms": "Muvofiqlik va bonus shartlari amal qiladi.",
+    "boothBadge": "Bizni {booth}-stendda kutamiz",
+    "stepsDetailed": [
+      {
+        "id": "register",
+        "label": "Roʻyxatdan oʻtish",
+        "text": "Shaklni toʻldiring. Taxminan ikki daqiqa oladi."
+      },
+      {
+        "id": "activate",
+        "label": "Faollashtirish",
+        "text": "Tizimga kiring va bonusni ochish uchun profilingizni toʻldiring."
+      },
+      {
+        "id": "trade",
+        "label": "Savdoni boshlash",
+        "text": "${amount} bonus bilan real bozorlarda savdo qiling."
+      }
+    ],
+    "stepsTitle": "Qanday ishlaydi",
+    "marketsLabel": "Oʻzingiz biladigan bozorlarda savdo qiling",
+    "markets": [
+      "EUR/USD",
+      "Oltin",
+      "US30",
+      "GBP/USD",
+      "Neft",
+      "NAS100",
+      "USD/JPY",
+      "Kumush",
+      "BTC/USD",
+      "GER40"
+    ]
+  },
+  "form": {
+    "eyebrow": "${amount} xush kelibsiz bonusi",
+    "title": "Hoziroq roʻyxatdan oʻting",
+    "subtitle": "${amount} savdo bonusini olish uchun hisob yarating.",
+    "firstName": "Ism",
+    "firstNamePlaceholder": "masalan, Aziz",
+    "lastName": "Familiya",
+    "lastNamePlaceholder": "masalan, Karimov",
+    "phone": "Mobil telefon raqami",
+    "phonePlaceholder": "90 123 45 67",
+    "email": "Elektron pochta manzili",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Kod yuborish",
+    "resendIn": "{seconds} soniyadan keyin qayta yuborish",
+    "resend": "Qayta yuborish",
+    "sending": "Yuborilmoqda…",
+    "code": "Tasdiqlash kodi",
+    "codeHint": "Elektron pochtangizga yuborilgan 6 xonali kodni kiriting.",
+    "codeDigit": "6 ta raqamdan {n}-si",
+    "country": "Yashash davlati",
+    "countryPlaceholder": "Davlatingizni tanlang",
+    "countriesFailed": "Davlatlar roʻyxatini yuklab boʻlmadi. Iltimos, sahifani yangilang.",
+    "invite": "Taklif kodi",
+    "optional": "(ixtiyoriy)",
+    "invitePlaceholder": "Taklif kodini kiriting",
+    "termsBefore": "Men quyidagi hujjatlar bilan tanishib chiqdim va ularga rozilik bildiraman:",
+    "termsLink": "Foydalanish shartlari",
+    "bonusTermsLink": "Bonus shartlari",
+    "and": "va",
+    "agreementLink": "Mijoz shartnomasi",
+    "submit": "${amount} bonusni olish",
+    "submitting": "Hisobingiz ochilmoqda…",
+    "secure": "256 bitli shifrlash. Maʼlumotlaringiz bizda xavfsiz.",
+    "progress": "{total} tadan {done} tasi bajarildi",
+    "errors": {
+      "firstName": "Iltimos, ismingizni kiriting.",
+      "firstNameLetters": "Faqat harflardan foydalaning.",
+      "lastName": "Iltimos, familiyangizni kiriting.",
+      "lastNameLetters": "Faqat harflardan foydalaning.",
+      "email": "Iltimos, elektron pochta manzilingizni kiriting.",
+      "emailInvalid": "Iltimos, toʻgʻri elektron pochta manzilini kiriting.",
+      "emailRegistered": "Bu elektron pochta allaqachon roʻyxatdan oʻtgan. Iltimos, tizimga kiring.",
+      "otpRequired": "Elektron pochtangizdagi 6 xonali kodni kiriting.",
+      "otpLength": "Kod 6 ta raqamdan iborat.",
+      "country": "Iltimos, yashash davlatingizni tanlang.",
+      "validCountry": "Iltimos, roʻyxatdan davlatni tanlang.",
+      "phone": "Iltimos, mobil raqamingizni kiriting.",
+      "phoneInvalid": "Iltimos, toʻgʻri mobil raqamni kiriting.",
+      "terms": "Davom etish uchun shartlarni qabul qiling."
+    },
+    "toast": {
+      "otpSent": "Elektron pochtangizga 6 xonali kod yubordik.",
+      "codeError": "Kodni yuborib boʻlmadi. Iltimos, qayta urinib koʻring.",
+      "registrationFailed": "Hisobingizni ochib boʻlmadi. Iltimos, qayta urinib koʻring."
+    },
+    "passwordNote": "Parol yaratish shart emas: hisobingizni oʻzimiz sozlaymiz va u ochilishi bilan kirish maʼlumotlarini elektron pochtangizga yuboramiz."
+  },
+  "success": {
+    "eyebrow": "Roʻyxatdan oʻtish yakunlandi",
+    "title": "Roʻyxatdan oʻtganingiz uchun rahmat, {name}!",
+    "text": "Iltimos, elektron pochtangizni tekshiring. GTCFX savdo portali uchun foydalanuvchi nomi va parolingizni {email} manziliga yubordik.",
+    "textNoEmail": "Hisobingiz ochildi. Foydalanuvchi nomi va parolingiz tez orada {email} manziliga yetib boradi; agar kelmasa, stenddagi jamoamizga murojaat qiling.",
+    "inboxTip": "Topa olmadingizmi? Spam yoki keraksiz xatlar papkasini tekshiring.",
+    "steps": [
+      {
+        "id": "email",
+        "label": "Elektron pochtani tekshiring",
+        "text": "Foydalanuvchi nomi va parolingiz pochta qutingizda sizni kutmoqda."
+      },
+      {
+        "id": "app",
+        "label": "Ilovani yuklab oling",
+        "text": "“GTCFX: GTC GO” ilovasini App Store yoki Google Play orqali yuklab oling."
+      },
+      {
+        "id": "trade",
+        "label": "Tizimga kiring va savdoni boshlang",
+        "text": "Kirish maʼlumotlaringiz bilan tizimga kiring, hisobingizni faollashtiring va ${amount} bonus bilan savdo qiling."
+      }
+    ],
+    "app": {
+      "title": "GTCFX: GTC GO ilovasini yuklab oling",
+      "text": "Elektron pochtangizdagi foydalanuvchi nomi va parol bilan tizimga kiring va telefoningizdan savdoni boshlang.",
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "login": "Yoki veb-portal orqali kiring",
+    "another": "Yana bir tashrif buyuruvchini roʻyxatdan oʻtkazish"
+  },
+  "benefits": {
+    "kicker": "Yaxshiroq boshlanish",
+    "title": "Kichik start.",
+    "titleAccent": "Haqiqiy imkoniyatlar.",
+    "items": [
+      {
+        "id": "funds",
+        "title": "Haqiqiy mablagʻ. Haqiqiy bozorlar.",
+        "text": "{amount} USD mablagʻingiz bilan demo emas, balki real bozorlarda savdo qiling. Haqiqiy moliya bozorlarida savdo qiling."
+      },
+      {
+        "id": "deposit",
+        "title": "Depozitsiz boshlang.",
+        "text": "Strategiyalarni sinab koʻring yoki savdo platformamizni oʻrganing. {amount} USD savdo bonusidan foydalanayotganingizda oʻz mablagʻlaringiz daxlsiz qoladi."
+      },
+      {
+        "id": "next",
+        "title": "Keyingi qadamni biling.",
+        "text": "Roʻyxatdan oʻting, hisobingizni faollashtiring, soʻng savdo qiling. Boshlashdan oldin bonus va yechib olish shartlari bilan tanishib chiqing."
+      }
+    ]
+  },
+  "footer": {
+    "riskTitle": "Xavf haqida ogohlantirish",
+    "risk": [
+      "Hosilaviy moliyaviy vositalar, jumladan, aylanma spot valyuta (FX) va farq uchun shartnomalar (CFD) bilan savdo qilish yuqori darajada spekulyativ boʻlib, sezilarli xavf bilan bogʻliq va har bir investor uchun ham mos kelavermaydi. Ushbu veb-saytdagi hech bir maʼlumot investitsiya maslahati yoki tavsiyasi hisoblanmaydi va u sizning shaxsiy maqsadlaringiz, moliyaviy ahvolingiz yoki ehtiyojlaringizni hisobga olmagan holda tayyorlangan.",
+      "FX va CFD marja asosida savdo qilinadigan murakkab vositalar boʻlib, foyda va zararni baravar kuchaytiradigan kredit yelkasi (leverij) tufayli pulni tez yoʻqotish xavfi yuqori. Siz sarmoya kiritilgan kapitalning bir qismini yoki hammasini yoʻqotishingiz mumkin, zararlar esa dastlabki investitsiyangizdan ham oshib ketishi mumkin. Savdo qilishdan oldin maqsadlaringiz, moliyaviy ahvolingiz, tajribangiz darajasi va xavfga tayyorligingizni inobatga oling, bu mahsulotlar qanday ishlashini tushunib yetganingizga ishonch hosil qiling va faqat yoʻqotishga qodir boʻlgan mablagʻlar bilan savdo qiling. Shubha tugʻilsa, mustaqil moliyaviy yoki soliq maslahatchisiga murojaat qiling. Oʻtmishdagi natijalar kelajakdagi natijalarni kafolatlamaydi.",
+      "Mijoz shartnoma tuzadigan yuridik shaxs mijozning yurisdiksiyasi, muvofiqligi, tasnifi va roʻyxatdan oʻtish yoʻliga bogʻliq boʻladi. Tegishli shartnoma tuziladigan yuridik shaxs va, zarur boʻlganda, mahsulot emitenti va/yoki kontragent mijoz hisob ochish uchun ariza topshirishdan oldin aniq koʻrsatiladi hamda tegishli Mijoz shartnomasida belgilanadi. Bir yuridik shaxs doirasida mavjud boʻlgan mahsulot va xizmatlar boshqa yuridik shaxs doirasida mavjud boʻlmasligi mumkin. GTC Financial Group tarkibidagi har bir yuridik shaxs alohida yuridik shaxs hisoblanadi. Bitta yuridik shaxsga berilgan litsenziya guruhdagi boshqa hech bir yuridik shaxsga tatbiq etilmaydi.",
+      "GTC Global Trading Ltd — Komor Orollari Ittifoqining Anjuan orolida roʻyxatdan oʻtgan kompaniya (kompaniya raqami 16283) boʻlib, Anjuan offshor moliya idorasi (Anjouan Offshore Finance Authority) tomonidan L16283/GTC raqamli litsenziya asosida litsenziyalangan. Roʻyxatdan oʻtgan manzili: Boulevard de Coalancanthe, Mutsamudu, Anjouan, Union of the Comoros.",
+      "GTC Global Trade Capital Co. Limited (kompaniya raqami 40354) — Vanuatuda roʻyxatdan oʻtgan kompaniya. Kompaniya Vanuatu Moliyaviy xizmatlar komissiyasi tomonidan Moliyaviy dilerlarni litsenziyalash toʻgʻrisidagi qonun [CAP. 70] asosida berilgan A, B va C sinfidagi Bosh (Principal) litsenziyalariga ega. Roʻyxatdan oʻtgan manzili: First Floor, B&P House, Kumul Highway, Port Vila, Vanuatu.",
+      "GTC Global Ltd — Mavrikiyda roʻyxatdan oʻtgan kompaniya (kompaniya raqami C188049) boʻlib, Global biznes litsenziyasiga ega hamda Mavrikiy Moliyaviy xizmatlar komissiyasi (FSC) tomonidan 2005-yilgi Qimmatli qogʻozlar toʻgʻrisidagi qonunning 29-moddasi, 2007-yilgi Qimmatli qogʻozlar (litsenziyalash) qoidalarining 4-qoidasi va 2008-yilgi Moliyaviy xizmatlar (yagona litsenziyalash va toʻlovlar) qoidalariga muvofiq Investitsion diler (toʻliq xizmat koʻrsatuvchi diler, anderrayting bundan mustasno) / SEC-2.1B sifatida, litsenziya raqami GB22200292, vakolatlangan va tartibga solinadi. Roʻyxatdan oʻtgan ofisi va asosiy faoliyat joyi: Ground Floor, The Catalyst, Silicon Avenue, 40 Cybercity, 72201 Ebene, Republic of Mauritius.",
+      "Ushbu xalqaro veb-sayt orqali taqdim etiladigan xizmatlar Qoʻshma Shtatlar, Yaponiya va Avstraliya rezidentlari uchun, shuningdek, bunday xizmatlarni taqdim etish amaldagi qonunlar, qoidalar yoki sanksiyalarni buzadigan har qanday yurisdiksiyada mavjud emas."
+    ],
+    "copyright": "© {year} GTCFX. Barcha huquqlar himoyalangan."
+  },
+  "stats": {
+    "items": [
+      {
+        "value": 985000,
+        "prefix": "",
+        "suffix": "+",
+        "label": "Xizmat koʻrsatilgan mijozlar"
+      },
+      {
+        "value": 7,
+        "prefix": "",
+        "suffix": "+",
+        "label": "Savdo bozorlari"
+      },
+      {
+        "value": 20,
+        "prefix": "",
+        "suffix": "+",
+        "label": "Qoʻllab-quvvatlanadigan tillar"
+      },
+      {
+        "value": 850,
+        "prefix": "$",
+        "suffix": " mlrd",
+        "label": "Oylik savdo hajmi"
+      }
+    ]
+  },
+  "platforms": {
+    "eyebrow": "Platformalar",
+    "title": "Istalgan joyda, istalgan qurilmada savdo qiling",
+    "subtitle": "Uslubingizga mos platformani tanlang — mobil, kompyuter yoki veb orqali.",
+    "items": [
+      {
+        "key": "gtcgo",
+        "brand": "GTC Go",
+        "title": "GTC Go – savdo va investitsiya",
+        "tagline": "Yoʻlda savdo qilish va investitsiya kiritish uchun oʻzimizning ilovamiz",
+        "cta": "GTC Go ni yuklab olish"
+      },
+      {
+        "key": "mt5",
+        "brand": "MetaTrader 5",
+        "title": "MT5 savdo platformasi",
+        "tagline": "Zamonaviy savdo uchun ilgʻor vositalar",
+        "cta": "MT5 platformasini yuklab olish"
+      },
+      {
+        "key": "mt4",
+        "brand": "MetaTrader 4",
+        "title": "MT4 savdo platformasi",
+        "tagline": "Ishonchli va klassik savdo platformasi",
+        "cta": "MT4 platformasini yuklab olish"
+      }
+    ],
+    "features": [
+      "Windows · macOS · Veb",
+      "iOS · Android",
+      "Bir bosishda savdo"
+    ],
+    "perks": [
+      "<10 ms ijro",
+      "1:2000 gacha kredit yelkasi",
+      "24/5 savdo"
+    ]
+  },
+  "faq": {
+    "eyebrow": "Roʻyxatdan oʻtishdan oldin",
+    "titleA": "Bonusingiz haqida",
+    "titleB": "savollaringiz bormi?",
+    "subtitle": "Tashrif buyuruvchilar bizdan eng koʻp shularni soʻrashadi. Hali ham ishonchingiz komil emasmi? Stenddagi jamoamiz yordam berishdan mamnun.",
+    "contact": "Biz bilan bogʻlaning",
+    "items": [
+      {
+        "q": "${amount} bonusni olish uchun depozit kiritishim kerakmi?",
+        "a": "Yoʻq. Ushbu sahifa orqali GTC Standard hisobini oching va hisobingiz faollashtirilgach ${amount} USD savdo bonusi qoʻshiladi. Depozit talab qilinmaydi."
+      },
+      {
+        "q": "Nega parolni oʻzim tanlamayman?",
+        "a": "Roʻyxatdan oʻtishni tezlashtirish uchun biz siz uchun xavfsiz parol yaratamiz va hisobingiz ochilishi bilan uni kirish maʼlumotlari bilan birga elektron pochtaga yuboramiz. Birinchi kirishdan soʻng parolni oʻzgartiring."
+      },
+      {
+        "q": "Hisobimni qanday faollashtiraman?",
+        "a": "Elektron pochtangizga yuborilgan maʼlumotlar bilan mijozlar portaliga kiring, profilingizni toʻldiring va shaxsingizni tasdiqlang. Tasdiqlash maʼqullangach, bonus ochiladi."
+      },
+      {
+        "q": "Bonus bilan nimalarda savdo qilsam boʻladi?",
+        "a": "Undan real bozorlarda savdo qilish uchun foydalaning: foreks, metallar, energiya resurslari, indekslar va boshqalar — MetaTrader 4, MetaTrader 5 yoki GTC Go ilovasida."
+      },
+      {
+        "q": "Bonusni yechib olsam boʻladimi?",
+        "a": "Bonusning oʻzi savdo uchun moʻljallangan. Uning yordamida olgan foydangizni bonus shartlariga muvofiq yechib olish mumkin. Boshlashdan oldin Bonus shartlarini oʻqib chiqing."
+      },
+      {
+        "q": "Elektron pochta kelmadi. Endi nima qilaman?",
+        "a": "Avval spam yoki keraksiz xatlar papkasini tekshiring. Baribir kelmagan boʻlsa, stenddagi jamoamizdan soʻrang yoki qoʻllab-quvvatlash xizmatiga yozing — maʼlumotlaringizni qayta yuboramiz."
+      }
+    ],
+    "languages": "20+ til",
+    "questions": "Savollar"
+  },
+  "companyPage": {
+    "legalSection": {
+      "title": "Huquqiy maʼlumot",
+      "subtitle": "GTCFX tartibga solinishi",
+      "description": "GTC Group dunyo boʻylab quyidagi yuridik shaxslarga egalik qiladi, ular birgalikda GTC Financial Group hisoblanadi. Ushbu yuridik shaxslarning har biri tegishli yurisdiksiyadagi oʻz litsenziyalariga muvofiq moliyaviy xizmatlar koʻrsatadi.",
+      "viewMore": "Batafsil",
+      "entities": {
+        "australia": {
+          "name": "Avstraliya",
+          "text": "GTC Global (Australia) Pty Ltd 496371-raqamli Avstraliya moliyaviy xizmatlari litsenziyasiga ega. GTC Global (Australia) asosan Avstraliya mijozlariga taʼlim xizmatlarini koʻrsatishga yoʻnaltirilgan."
+        },
+        "mauritius": {
+          "name": "Mavrikiy",
+          "text": "GTC Global Ltd. — Mavrikiyda roʻyxatdan oʻtgan masʼuliyati cheklangan jamiyat (kompaniya raqami: C188049) boʻlib, Mavrikiy Moliyaviy xizmatlar komissiyasi tomonidan (№ GB22200292) SEC-2 sifatida savdo qilish uchun litsenziyalangan."
+        },
+        "southAfrica": {
+          "name": "Janubiy Afrika",
+          "text": "GTC Global SA (Pty) Ltd (kompaniya raqami 2020/810937/07) — vakolatli moliyaviy xizmatlar provayderi (FSP № 51545). Roʻyxatdan oʻtgan manzili: 18 Cavendish Road, Claremont, Cape Town, Western Cape, 7708, South Africa. Kompaniya na marketmeyker, na mahsulot emitenti hisoblanadi va 2002-yilgi Moliyaviy maslahat va vositachilik xizmatlari toʻgʻrisidagi qonun (FAIS) doirasida faqat vositachi sifatida faoliyat yuritadi."
+        },
+        "vanuatu": {
+          "name": "Vanuatu",
+          "text": "GTC Global Trade Capital Co. Limited — Vanuatu Respublikasi Moliyaviy xizmatlar komissiyasi tomonidan roʻyxatdan oʻtkazilgan, nazorat qilinadigan va vakolatlangan global moliyaviy brokerlik kompaniyasi. Kompaniya litsenziya raqami: 40354. Roʻyxatdan oʻtgan manzili: 1/Floor, B&P House, Kumul Highway, Port Vila, Vanuatu."
+        },
+        "cambodia": {
+          "name": "Kambodja",
+          "text": "GTCFX Co., Ltd. Kambodja Qimmatli qogʻozlar va birjalar tartibga soluvchisi (SERC) tomonidan 043 N.M.K./A.B./Ch.U. raqamli litsenziya asosida Derivativ broker sifatida litsenziyalangan; litsenziya 2026-yil 8-oktabrdan 2028-yil 7-oktabrgacha amal qiladi. Roʻyxatdan oʻtgan manzili: Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia."
+        }
+      },
+      "entity": "Tartibga solinadigan yuridik shaxs",
+      "hq": "Bosh ofis · Dubay",
+      "count": "Tartibga solinadigan yuridik shaxslar soni: {count}",
+      "pause": "Toʻxtatish",
+      "play": "Ijro etish",
+      "choose": "Yurisdiksiyani tanlang"
+    },
+    "awardsSection": {
+      "title": "GTCFX mukofotlari",
+      "subtitle": "Yuksak natijalari uchun mukofotlarga sazovor boʻlgan CFD broker",
+      "description": "GTCFX bir nechta xalqaro koʻrgazma va moliyaviy tadbirlarda soha eʼtirofiga sazovor boʻldi, bu bizning innovatsiyalar, xizmat sifati va global savdo yechimlaridagi mukammallikka sodiqligimizni aks ettiradi.",
+      "viewMore": "Batafsil",
+      "prev": "Oldingi mukofotlar",
+      "next": "Keyingi mukofotlar",
+      "items": [
+        {
+          "title": "Dunyodagi eng yaxshi likvidlik provayderi",
+          "image": "/awards/1.webp"
+        },
+        {
+          "title": "Eng yaxshi likvidlik provayderi",
+          "image": "/awards/2.webp"
+        },
+        {
+          "title": "Eng yaxshi foreks vositachi broker",
+          "image": "/awards/3.webp"
+        }
+      ],
+      "recognised": "Soha tomonidan eʼtirof etilgan"
+    }
+  },
+  "regulationsPage": {
+    "entities": {
+      "title": "Har bir yuridik shaxsga xos tartibga solish: [bir nechta yurisdiksiya]",
+      "description": "Quyida koʻrsatilgan yuridik shaxslar va affillangan kompaniyalar alohida yuridik shaxslardir. Har bir litsenziya faqat u berilgan yuridik shaxsga tegishli boʻlib, boshqa yuridik shaxs, affillangan kompaniya yoki umuman GTC brendiga tatbiq etilmaydi. Mijozga taqdim etiladigan mahsulotlar, xizmatlar va tartibga solish himoyasi tegishli shartnoma tuzuvchi yuridik shaxsga, mijozning yurisdiksiyasi va muvofiqligiga bogʻliq. Litsenziya maʼlumotlarini tegishli tartibga soluvchi organning rasmiy reyestri orqali tekshirish mumkin.",
+      "labels": {
+        "authority": "Tartibga soluvchi organ",
+        "type": "Litsenziya turi",
+        "licence": "Litsenziya raqami",
+        "registration": "Roʻyxatdan oʻtish raqami",
+        "company": "Kompaniya raqami",
+        "validity": "Amal qilish muddati",
+        "address": "Roʻyxatdan oʻtgan manzil"
+      },
+      "verify": "{regulator} reyestrida tekshirish",
+      "verifySoon": "Reyestr havolasi tez orada qoʻshiladi",
+      "copy": "Nusxalash",
+      "copied": "Nusxalandi",
+      "items": [
+        {
+          "id": "southAfrica",
+          "code": "ZA",
+          "country": "Janubiy Afrika",
+          "city": "Keyptaun",
+          "name": "GTC Global SA (Pty) Ltd",
+          "short": "FSCA",
+          "number": "FSP 51545",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Moliya sektori xulq-atvori boshqarmasi (FSCA)"
+            },
+            {
+              "id": "type",
+              "value": "Moliyaviy xizmatlar provayderi (FSP)"
+            },
+            {
+              "id": "licence",
+              "value": "FSP 51545"
+            },
+            {
+              "id": "registration",
+              "value": "2020/810937/07"
+            },
+            {
+              "id": "address",
+              "value": "18 Cavendish Road, Claremont, Cape Town, Western Cape, 7708, South Africa."
+            }
+          ],
+          "registerUrl": "https://www.fsca.co.za"
+        },
+        {
+          "id": "vanuatu",
+          "code": "VU",
+          "country": "Vanuatu",
+          "city": "Port-Vila",
+          "name": "GTC Global Trade Capital Co. Limited",
+          "short": "VFSC",
+          "number": "40354",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Vanuatu Moliyaviy xizmatlar komissiyasi (VFSC)"
+            },
+            {
+              "id": "type",
+              "value": "Bosh diler (Principal) litsenziyasi"
+            },
+            {
+              "id": "licence",
+              "value": "40354"
+            },
+            {
+              "id": "address",
+              "value": "1/Floor, B&P House, Kumul Highway, Port Vila"
+            }
+          ],
+          "registerUrl": "https://www.vfsc.vu"
+        },
+        {
+          "id": "comoros",
+          "code": "KM",
+          "country": "Komor orollari",
+          "city": "Anjuan",
+          "name": "GTC Global Trading LTD",
+          "short": "AOFA",
+          "number": "L16283/GTC",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Anjuan offshor moliya idorasi"
+            },
+            {
+              "id": "type",
+              "value": "Brokerlik litsenziyasi"
+            },
+            {
+              "id": "licence",
+              "value": "L16283/GTC"
+            },
+            {
+              "id": "company",
+              "value": "16283"
+            },
+            {
+              "id": "address",
+              "value": "Boulevard de Coalancanthe, Mutsamudu, Anjouan, Union of the Comoros"
+            }
+          ],
+          "registerUrl": ""
+        },
+        {
+          "id": "australia",
+          "code": "AU",
+          "country": "Avstraliya",
+          "city": "Sidney",
+          "name": "GTC Global (Australia) Pty Ltd",
+          "short": "ASIC",
+          "number": "496371",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Avstraliya qimmatli qogʻozlar va investitsiyalar komissiyasi (ASIC)"
+            },
+            {
+              "id": "type",
+              "value": "Avstraliya moliyaviy xizmatlari litsenziyasi"
+            },
+            {
+              "id": "licence",
+              "value": "496371"
+            }
+          ],
+          "registerUrl": "https://asic.gov.au"
+        },
+        {
+          "id": "mauritius",
+          "code": "MU",
+          "country": "Mavrikiy",
+          "city": "Port-Lui",
+          "name": "GTC Global Ltd",
+          "short": "FSC",
+          "number": "GB22200292",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Moliyaviy xizmatlar komissiyasi (FSC)"
+            },
+            {
+              "id": "type",
+              "value": "SEC-2 investitsion diler"
+            },
+            {
+              "id": "licence",
+              "value": "GB22200292"
+            },
+            {
+              "id": "company",
+              "value": "C188049"
+            }
+          ],
+          "registerUrl": "https://www.fscmauritius.org"
+        },
+        {
+          "id": "cambodia",
+          "code": "KH",
+          "country": "Kambodja",
+          "city": "Pnompen",
+          "name": "GTCFX Co., Ltd.",
+          "short": "SERC",
+          "number": "043 N.M.K./A.B./Ch.U.",
+          "rows": [
+            {
+              "id": "authority",
+              "value": "Kambodja qimmatli qogʻozlar va birjalar tartibga soluvchisi (SERC)"
+            },
+            {
+              "id": "type",
+              "value": "Derivativ broker"
+            },
+            {
+              "id": "licence",
+              "value": "043 N.M.K./A.B./Ch.U."
+            },
+            {
+              "id": "validity",
+              "value": "2026-yil 8-oktabr – 2028-yil 7-oktabr"
+            },
+            {
+              "id": "address",
+              "value": "Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia"
+            }
+          ],
+          "registerUrl": "https://www.serc.gov.kh"
+        }
+      ]
+    }
+  }
+}

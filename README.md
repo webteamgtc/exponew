@@ -26,9 +26,26 @@ npm run dev                  # http://localhost:3000 → /en-intl
 ## Languages
 
 Same languages and URLs as gtcfx.com (`src/i18n/locales.js`): `/en-intl`, `/ar`, `/zh`, `/hi`, `/ur`… Arabic, Urdu and
-Pashto are right-to-left. Text lives in `messages/<lang>.json`; English, Arabic and Chinese are translated, any other
-language (or missing key) shows English, like the main site. The language picker sits next to the logo and keeps the
+Pashto are right-to-left. Text lives in `messages/<lang>.json`; English, Arabic, Chinese, Uzbek (Latin script) and
+Russian are translated, any other language (or missing key) shows English, like the main site. The welcome e-mail
+(`src/lib/emails/expoWelcome.js`) exists in the same five languages. The language picker sits next to the logo and keeps the
 link's `?ref=` / `?code=`.
+
+## QR codes and language
+
+A QR code can point to any of these links; query parameters such as `?ref=CODE` are always kept:
+
+| Link | Opens |
+| --- | --- |
+| `https://<site>/uz` | Uzbek, always |
+| `https://<site>/ru` | Russian, always |
+| `https://<site>/` | the visitor's language (below) |
+
+For a link without a language, `src/proxy.js` picks: the browser's language if we have it (phone set to Uzbek → `/uz`,
+Russian → `/ru`); otherwise, a visitor in Uzbekistan → `/uz` or Russia → `/ru` even with an English phone (edit
+`COUNTRY_LOCALE` to add countries); otherwise English. The country comes from the host's geo header
+(`x-vercel-ip-country`, `cf-ipcountry` or `cloudfront-viewer-country`), so it needs Vercel, Cloudflare or CloudFront in
+front of the site. For a booth where the language is known, print the `/uz` or `/ru` link in the QR code.
 
 ## Change for the next expo
 
