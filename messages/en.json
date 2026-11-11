@@ -295,11 +295,11 @@
         },
         "cambodia": {
           "name": "Cambodia",
-          "text": "GTCFX Co., Ltd. is licensed by the Securities and Exchange Regulator of Cambodia (SERC) as a Derivative Broker under licence number 043 N.M.K./A.B./Ch.U., valid from 8 October 2026 to 7 October 2028. Registered address: Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia."
+          "text": "GTCFX Co., Ltd. is licensed by the Securities and Exchange Regulator of Cambodia (SERC) as a Derivative Broker under licence number 043 N.M.K./A.B./Ch.U. Registered address: Building No. 40, 8th Floor, Street 289, Phum 13, Sangkat Boeung Kak 1, Khan Tuol Kork, Phnom Penh, Cambodia."
         },
         "uae": {
-          "name": "United Arab Emirates",
-          "text": "GTC Financial Consultancy LLC is licensed by the Capital Market Authority (CMA) of the United Arab Emirates under licence number 20200000512 (First category: Dealing in securities), valid until 31 December 2027."
+          "name": "UAE",
+          "text": "GTC Financial Consultancy LLC is licensed by the Capital Market Authority (CMA) of the UAE under licence number 20200000512 (First category: Dealing in securities)."
         }
       },
       "entity": "Regulated entity",
@@ -343,7 +343,6 @@
         "licence": "Licence No.",
         "registration": "Registration No.",
         "company": "Company No.",
-        "validity": "Validity Period",
         "address": "Registered Address",
         "activities": "Licensed Activities"
       },
@@ -355,7 +354,7 @@
         {
           "id": "uae",
           "code": "AE",
-          "country": "United Arab Emirates",
+          "country": "UAE",
           "city": "Dubai",
           "name": "GTC Financial Consultancy LLC",
           "short": "CMA",
@@ -372,10 +371,6 @@
             {
               "id": "licence",
               "value": "20200000512"
-            },
-            {
-              "id": "validity",
-              "value": "9 November 2026 – 31 December 2027"
             },
             {
               "id": "activities",
@@ -548,10 +543,6 @@
             {
               "id": "licence",
               "value": "043 N.M.K./A.B./Ch.U."
-            },
-            {
-              "id": "validity",
-              "value": "8 October 2026 – 7 October 2028"
             },
             {
               "id": "address",
