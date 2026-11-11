@@ -73,7 +73,8 @@ export function dialFor(country) {
 
 /**
  * GTC country list from /api/gtc/get-country, sorted by name, without FORM_EXCLUDED_COUNTRIES.
- * `suggested` is the visitor's country (from the browser locale) when it is in the list.
+ * `suggested` is the visitor's country when it is in the list: by IP address (/api/geo), and from the browser's language
+ * only when the IP gives no answer.
  */
 export function useGtcCountries() {
   const [countries, setCountries] = useState([]);
@@ -82,17 +83,24 @@ export function useGtcCountries() {
 
   useEffect(() => {
     let alive = true;
-    post('/api/gtc/get-country')
-      .then((res) => {
+    // the country of the visitor's IP address; '' when unknown (then the browser's language is the fallback)
+    const geo = fetch('/api/geo')
+      .then((r) => r.json())
+      .then((d) => String(d?.country || '').toUpperCase())
+      .catch(() => '');
+    Promise.all([post('/api/gtc/get-country'), geo])
+      .then(([res, ipCountry]) => {
         if (!alive) return;
         if (res?.code === 200 && Array.isArray(res.data)) {
           const list = res.data.filter((c) => !FORM_EXCLUDED_COUNTRIES.includes(String(c.code).toUpperCase())).sort((a, b) => a.name.localeCompare(b.name));
           setCountries(list);
-          let region = '';
-          try {
-            region = new Intl.Locale(navigator.language).maximize().region || '';
-          } catch {}
-          setSuggested(list.find((c) => c.code === region) ?? null);
+          let region = ipCountry;
+          if (!region) {
+            try {
+              region = new Intl.Locale(navigator.language).maximize().region || '';
+            } catch {}
+          }
+          setSuggested(list.find((c) => String(c.code).toUpperCase() === region) ?? null);
         } else setFailed(true);
       })
       .catch(() => alive && setFailed(true));

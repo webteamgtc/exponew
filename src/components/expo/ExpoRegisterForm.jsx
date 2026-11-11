@@ -6,8 +6,8 @@
  * Fields: first + last name, mobile, email + code, country, invitation code, terms. No password to choose: the server
  * creates one, opens the account with it and e-mails the login details in the visitor's language (/api/expo/register).
  *
- * Invitation code: EXPO.inviteCode always when EXPO.forceInviteCode is on (the field is hidden); otherwise from the link
- * (?code, ?ref → locked; ?partner_id, ?partner_code, ?ib), else typed, else EXPO.inviteCode.
+ * Invitation code: the field starts with EXPO.inviteCode. With EXPO.forceInviteCode it is read-only and the server always
+ * uses it; otherwise a link code (?code, ?ref → locked; ?partner_id, ?partner_code, ?ib) or a typed one replaces it.
  * After a successful registration the card shows the success panel; "Register another visitor" clears it for the next
  * person (the booth tablet flow).
  * Messages (code sent, email already registered, errors) are react-toastify toasts (<Toaster /> on the page).
@@ -27,7 +27,7 @@ import { cn } from '@/lib/utils';
 import OtpBoxes from './OtpBoxes';
 import RegisterSuccess from './RegisterSuccess';
 
-const EMPTY = { firstname: '', lastname: '', phone: '', email: '', otp: '', country: '', invite: '', terms: false };
+const EMPTY = { firstname: '', lastname: '', phone: '', email: '', otp: '', country: '', invite: EXPO.inviteCode, terms: false };
 const REQUIRED = ['firstname', 'lastname', 'phone', 'email', 'otp', 'country', 'terms'];
 const RESEND_SECONDS = 60;
 
@@ -56,7 +56,8 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
   // link parameters (after mount, so the page stays static)
   useEffect(() => {
     const { partner, locked, deepLink: dl } = readUrlParams();
-    if (partner) setValues((v) => ({ ...v, invite: partner }));
+    // with forceInviteCode the expo's code stays, whatever the link says
+    if (partner && !EXPO.forceInviteCode) setValues((v) => ({ ...v, invite: partner }));
     setInviteLocked(locked);
     setDeepLink(dl);
   }, []);
@@ -72,6 +73,8 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
     return () => clearTimeout(id);
   }, [cooldown]);
 
+  // the expo's code is shown filled in; it can't be edited when forced (or when it came from a ?ref= link)
+  const inviteReadOnly = EXPO.forceInviteCode || inviteLocked;
   const selected = countries.find((c) => c.name === values.country);
   const dial = dialFor(selected);
   const phoneEmpty = !values.phone || /^\+\d{0,4}$/.test(values.phone);
@@ -169,9 +172,9 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
     }
   };
 
-  /** Clears everything for the next visitor (keeps the country and a locked invitation code). */
+  /** Clears everything for the next visitor (keeps the country and a locked invitation code, otherwise back to the expo's code). */
   const reset = () => {
-    setValues((v) => ({ ...EMPTY, country: v.country, phone: dial ? `+${dial}` : '', invite: inviteLocked ? v.invite : '' }));
+    setValues((v) => ({ ...EMPTY, country: v.country, phone: dial ? `+${dial}` : '', invite: inviteReadOnly ? v.invite : EXPO.inviteCode }));
     setTouched({});
     setCodeSent(false);
     setCooldown(0);
@@ -301,21 +304,19 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
                 </div>
               </Field>
 
-              {!EXPO.forceInviteCode && (
-                <Field
-                  id="expo-invite"
-                  label={
-                    <>
-                      {t('invite')} <span className="font-normal text-ink/40">{t('optional')}</span>
-                    </>
-                  }
-                >
-                  <div className={cn(box, boxState(false), inviteLocked && 'bg-brand-50/60')}>
-                    <Ticket className="size-4 shrink-0 text-ink/35" />
-                    <input id="expo-invite" className={input} value={values.invite} onChange={set('invite')} readOnly={inviteLocked} placeholder={t('invitePlaceholder')} autoComplete="off" />
-                  </div>
-                </Field>
-              )}
+              <Field
+                id="expo-invite"
+                label={
+                  <>
+                    {t('invite')} {!EXPO.forceInviteCode && <span className="font-normal text-ink/40">{t('optional')}</span>}
+                  </>
+                }
+              >
+                <div className={cn(box, boxState(false), inviteReadOnly && 'bg-brand-50/60')}>
+                  <Ticket className="size-4 shrink-0 text-ink/35" />
+                  <input id="expo-invite" className={input} value={values.invite} onChange={set('invite')} readOnly={inviteReadOnly} placeholder={t('invitePlaceholder')} autoComplete="off" />
+                </div>
+              </Field>
 
               <p className="flex items-start gap-3 rounded-xl bg-brand-50/70 px-3.5 py-3 text-xs leading-relaxed text-brand">
                 <KeyRound className="mt-0.5 size-4 shrink-0" />
