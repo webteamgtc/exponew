@@ -36,7 +36,7 @@ export const EXPO = {
    */
   registration: {
     type: 0,
-    activityCode: '',
+    activityCode: 'EkxQ2h？',
     fromType: '',
     fromClientId: '',
     recommend: ''
