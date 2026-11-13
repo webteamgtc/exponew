@@ -139,62 +139,233 @@ const COPY = {
   }
 };
 
+/** Words the e-mail layout needs on top of COPY; languages missing here use English. */
+const LAYOUT = {
+  en: { portal: 'Client Portal', welcome: 'Welcome aboard,', access: 'Client Access', fallback: 'Button not working? Copy this link into your browser:', nextEyebrow: 'Your next steps', nextTitle: 'Three steps to your first trade', stats: ['Clients served', 'Trading markets', 'Languages'], rights: 'All rights reserved.' },
+  ar: { portal: 'بوابة العملاء', welcome: 'أهلًا بك،', access: 'بيانات الدخول', fallback: 'الزر لا يعمل؟ انسخ هذا الرابط في متصفحك:', nextEyebrow: 'خطواتك التالية', nextTitle: 'ثلاث خطوات نحو صفقتك الأولى', stats: ['عميل', 'أسواق تداول', 'لغة'], rights: 'جميع الحقوق محفوظة.' },
+  zh: { portal: '客户门户', welcome: '欢迎加入，', access: '客户登录', fallback: '按钮无法使用？请将此链接复制到浏览器：', nextEyebrow: '下一步', nextTitle: '三步开启您的首笔交易', stats: ['服务客户', '交易市场', '支持语言'], rights: '版权所有。' },
+  uz: { portal: 'Mijozlar portali', welcome: 'Xush kelibsiz,', access: 'Mijoz kirishi', fallback: 'Tugma ishlamayaptimi? Ushbu havolani brauzeringizga nusxalang:', nextEyebrow: 'Keyingi qadamlaringiz', nextTitle: 'Birinchi savdongizgacha uch qadam', stats: ['Mijozlar', 'Savdo bozorlari', 'Tillar'], rights: 'Barcha huquqlar himoyalangan.' },
+  ru: { portal: 'Клиентский портал', welcome: 'Добро пожаловать,', access: 'Доступ клиента', fallback: 'Кнопка не работает? Скопируйте эту ссылку в браузер:', nextEyebrow: 'Ваши следующие шаги', nextTitle: 'Три шага до первой сделки', stats: ['Клиентов', 'Торговых рынков', 'Языков'], rights: 'Все права защищены.' }
+};
+
+const FONT = 'font-family:Arial,Helvetica,sans-serif;';
+
 export function expoWelcomeEmail({ lang = 'en', name, email, password, portalUrl, supportEmail, expoName, amount }) {
   const c = COPY[lang] ?? COPY.en;
-  const align = c.dir === 'rtl' ? 'right' : 'left';
+  const l = LAYOUT[lang] ?? LAYOUT.en;
+  const rtl = c.dir === 'rtl';
+  const start = rtl ? 'right' : 'left';
+  const end = rtl ? 'left' : 'right';
+  const url = esc(portalUrl);
+  const urlShort = esc(portalUrl.replace(/^https?:\/\//, '').split('?')[0]);
+  const [, received, disclaimer] = c.footer(supportEmail);
+  const label = `margin:0;font-size:11px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#8d95c4;`;
+
   const steps = c
     .steps(amount)
-    .map(
-      ([title, text], i) => `
-          <tr>
-            <td style="width:44px;vertical-align:top;padding:0 0 18px;">
-              <div style="width:32px;height:32px;border-radius:16px;background:#192055;color:#ffffff;font-size:14px;font-weight:700;line-height:32px;text-align:center;">${i + 1}</div>
-            </td>
-            <td style="vertical-align:top;padding:4px 0 18px;">
-              <div style="font-size:15px;font-weight:700;color:#192055;">${esc(title)}</div>
-              <div style="font-size:13px;line-height:20px;color:#4b5563;margin-top:2px;">${esc(text)}</div>
-            </td>
-          </tr>`
-    )
+    .map(([title, text], i) => {
+      const last = i === 2;
+      const badge = last ? 'background-color:#b68756;background-image:linear-gradient(135deg,#e3c7a7 0%,#b68756 60%);' : 'background-color:#293b93;';
+      const panel = last ? 'background-color:#faf4ee;border:1px solid #f0e2d2;' : 'background-color:#f5f6fb;';
+      return `
+              ${i ? `<tr><td height="12" colspan="2" style="height:12px;line-height:12px;font-size:0;">&nbsp;</td></tr>` : ''}
+              <tr>
+                <td width="56" valign="top" style="width:56px;padding:0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr><td align="center" width="40" height="40" bgcolor="${last ? '#b68756' : '#293b93'}" style="width:40px;height:40px;${badge}border-radius:12px;${FONT}font-size:15px;line-height:40px;color:#ffffff;font-weight:bold;">0${i + 1}</td></tr></table>
+                </td>
+                <td valign="top">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;${panel}border-radius:14px;border-collapse:separate;">
+                    <tr><td style="padding:12px 16px;${FONT}text-align:${start};">
+                      <p style="margin:0;font-size:15px;line-height:22px;color:#141a4a;font-weight:bold;">${esc(title)}</p>
+                      <p style="margin:2px 0 0 0;font-size:13px;line-height:20px;color:#5b6180;">${esc(text)}</p>
+                    </td></tr>
+                  </table>
+                </td>
+              </tr>`;
+    })
     .join('');
 
+  const stat = (value, text, color, mid) =>
+    `<td width="${mid ? 34 : 33}%" align="center" valign="top" style="width:${mid ? 34 : 33}%;padding:20px 4px;${mid ? 'border-left:1px solid #eceef6;border-right:1px solid #eceef6;' : ''}${FONT}">
+                  <p style="margin:0;font-size:22px;line-height:28px;color:${color};font-weight:bold;" dir="ltr">${value}</p>
+                  <p style="margin:4px 0 0 0;font-size:10px;line-height:14px;letter-spacing:1.2px;text-transform:uppercase;color:#8a90ad;">${esc(text)}</p>
+                </td>`;
+
   const html = `<!DOCTYPE html>
-<html dir="${c.dir}" lang="${lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>${esc(c.subject)}</title></head>
-<body style="margin:0;padding:0;background-color:#F7F7F7;font-family:Arial,sans-serif;color:#111827;line-height:22px;text-align:${align};">
-  <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="width:100%;"><tr><td align="center" bgcolor="#F7F7F7" style="padding:24px 12px;">
-    <div style="max-width:560px;margin:0 auto;background-color:#192055;padding:5px;border-radius:40px;">
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" dir="${c.dir}" style="border-radius:36px;padding:28px;background-color:#ffffff;width:100%;text-align:${align};">
-        <tr><td style="padding:4px 0 20px;text-align:center;"><img src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/email-test.png" alt="GTCFX" style="max-width:165px;height:auto;"></td></tr>
-        <tr><td>
-          <h2 style="color:#ffffff;text-align:center;font-size:16px;margin:0 auto 28px;padding:10px 16px;background:#192055;border-radius:27px;max-width:80%;">${esc(c.banner)}</h2>
-          <p style="font-size:16px;color:#192055;margin:0 0 12px;"><strong>${esc(c.dear(name))}</strong></p>
-          <p style="margin:0 0 12px;">${esc(c.intro(expoName, amount))}</p>
+<html lang="${lang}" dir="${c.dir}" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>${esc(c.subject)}</title>
+</head>
+<body style="margin:0;padding:0;width:100%;background-color:#e9ecf5;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
 
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:100%;margin:22px 0 8px;">${steps}
-          </table>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#e9ecf5;opacity:0;">${esc(c.banner)} &middot; ${esc(c.details)}&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;</div>
 
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:100%;margin:6px 0 22px;background:#f6f7fb;border:1px solid #e6e9f2;border-radius:16px;">
-            <tr><td style="padding:16px 20px 6px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6b7194;">${esc(c.details)}</td></tr>
-            <tr><td style="padding:4px 20px;font-size:14px;"><span style="color:#6b7194;">${esc(c.url)}:</span> <a href="${esc(portalUrl)}" style="color:#293b93;font-weight:700;" dir="ltr">${esc(portalUrl.replace(/^https?:\/\//, '').split('?')[0])}</a></td></tr>
-            <tr><td style="padding:4px 20px;font-size:14px;"><span style="color:#6b7194;">${esc(c.email)}:</span> <strong style="color:#192055;" dir="ltr">${esc(email)}</strong></td></tr>
-            <tr><td style="padding:4px 20px 16px;font-size:14px;"><span style="color:#6b7194;">${esc(c.password)}:</span> <strong style="color:#192055;font-family:Consolas,Menlo,monospace;letter-spacing:0.5px;" dir="ltr">${esc(password)}</strong></td></tr>
-          </table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#e9ecf5" style="width:100%;background-color:#e9ecf5;border-collapse:collapse;">
+  <tr>
+    <td align="center" style="padding:28px 10px 36px 10px;">
 
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin:0 auto 22px;"><tr><td style="border-radius:30px;background:#293b93;">
-            <a href="${esc(portalUrl)}" style="display:inline-block;padding:14px 36px;font-size:15px;font-weight:700;color:#ffffff;text-decoration:none;border-radius:30px;">${esc(c.button)}</a>
-          </td></tr></table>
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" dir="${c.dir}" style="width:100%;max-width:600px;border-collapse:separate;">
 
-          <p style="margin:0 0 12px;padding:12px 16px;background:#fff8ec;border:1px solid #f1dfbf;border-radius:12px;font-size:13px;line-height:20px;color:#7a5418;">${c.safe}</p>
-          <p style="margin:0 0 12px;">${esc(c.questions)} <a href="mailto:${esc(supportEmail)}" style="color:#5166ff;">${esc(supportEmail)}</a>.</p>
-          <p style="line-height:30px;padding-top:12px;margin:0;">${esc(c.regards)}<br><strong style="color:#192055;">${esc(c.team)}</strong></p>
-        </td></tr>
-        <tr><td style="padding:24px 0 0;font-size:9px;line-height:13px;color:#000;">
-          ${c.footer(supportEmail).map((l) => `<p style="margin:0 0 6px;">${esc(l)}</p>`).join('\n          ')}
-        </td></tr>
+        <!-- Top bar -->
+        <tr>
+          <td bgcolor="#ffffff" style="background-color:#ffffff;border-radius:22px 22px 0 0;padding:22px 28px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+              <tr>
+                <td align="${start}" valign="middle">
+                  <a href="https://www.gtcfx.com" target="_blank" style="text-decoration:none;">
+                    <img src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/logo/main-logo.webp" width="132" alt="GTCFX" style="display:block;width:132px;max-width:132px;height:auto;border:0;outline:none;text-decoration:none;">
+                  </a>
+                </td>
+                <td align="${end}" valign="middle">
+                  <span style="display:inline-block;padding:6px 12px;background-color:#eef0fa;border-radius:20px;${FONT}font-size:11px;line-height:14px;letter-spacing:1px;text-transform:uppercase;color:#293b93;font-weight:bold;">${esc(l.portal)}</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Hero -->
+        <tr>
+          <td align="center" bgcolor="#141a4a" style="background-color:#141a4a;background-image:radial-gradient(circle at 15% 0%,rgba(81,102,255,0.45) 0%,rgba(81,102,255,0) 55%),radial-gradient(circle at 100% 100%,rgba(210,166,122,0.35) 0%,rgba(210,166,122,0) 50%),linear-gradient(160deg,#293b93 0%,#141a4a 60%,#0b0f2e 100%);padding:48px 24px 36px 24px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;">
+              <tr>
+                <td style="padding:7px 16px;border:1px solid rgba(227,199,167,0.55);border-radius:20px;${FONT}font-size:11px;line-height:14px;letter-spacing:2.5px;text-transform:uppercase;color:#e3c7a7;font-weight:bold;">&#10022;&nbsp; ${esc(c.banner)} &nbsp;&#10022;</td>
+              </tr>
+            </table>
+            <h1 style="margin:22px 0 0 0;${FONT}font-size:34px;line-height:42px;color:#ffffff;font-weight:bold;letter-spacing:-0.5px;">${esc(l.welcome)}<br><span style="color:#e3c7a7;">${esc(name)}</span></h1>
+            <p style="margin:16px auto 0 auto;max-width:440px;${FONT}font-size:15px;line-height:24px;color:#c3c9ea;">${esc(c.intro(expoName, amount))}</p>
+
+            <!-- Access card -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:separate;margin-top:34px;">
+              <tr>
+                <td align="${start}" bgcolor="#1d2563" style="background-color:#1d2563;background-image:linear-gradient(135deg,rgba(255,255,255,0.12) 0%,rgba(255,255,255,0.03) 100%);border:1px solid #b68756;border-radius:20px;padding:0;text-align:${start};box-shadow:0 24px 50px rgba(5,8,30,0.45);">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+                    <tr>
+                      <td style="padding:22px 24px 6px 24px;" valign="middle">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+                          <tr>
+                            <td align="${start}" valign="middle" style="${FONT}font-size:11px;line-height:14px;letter-spacing:2.5px;text-transform:uppercase;color:#e3c7a7;font-weight:bold;">GTCFX &middot; ${esc(l.access)}</td>
+                            <td align="${end}" valign="middle">
+                              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;">
+                                <tr><td width="38" height="28" bgcolor="#d2a67a" style="width:38px;height:28px;background-color:#d2a67a;background-image:linear-gradient(135deg,#f1e3d3 0%,#d2a67a 45%,#9a6f43 100%);border-radius:6px;font-size:0;line-height:0;">&nbsp;</td></tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:16px 24px 0 24px;${FONT}">
+                        <p style="${label}">${esc(c.url)}</p>
+                        <p style="margin:6px 0 0 0;font-size:15px;line-height:22px;word-break:break-all;" dir="ltr"><a href="${url}" target="_blank" style="color:#ffffff;font-weight:bold;text-decoration:underline;">${urlShort}</a></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:16px 24px 0 24px;${FONT}">
+                        <p style="${label}">${esc(c.email)}</p>
+                        <p style="margin:6px 0 0 0;font-size:15px;line-height:22px;color:#ffffff;font-weight:bold;word-break:break-all;" dir="ltr">${esc(email)}</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding:16px 24px 24px 24px;${FONT}">
+                        <p style="${label}">${esc(c.password)}</p>
+                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-top:8px;">
+                          <tr>
+                            <td bgcolor="#ffffff" dir="ltr" style="background-color:#ffffff;border-radius:10px;padding:10px 16px;font-family:Consolas,'Courier New',Courier,monospace;font-size:20px;line-height:26px;letter-spacing:2px;color:#141a4a;font-weight:bold;">${esc(password)}</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Button -->
+        <tr>
+          <td align="center" bgcolor="#ffffff" style="background-color:#ffffff;padding:32px 28px 6px 28px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;">
+              <tr>
+                <td align="center" bgcolor="#b68756" style="background-color:#b68756;background-image:linear-gradient(135deg,#e3c7a7 0%,#b68756 50%,#8a5f37 100%);border-radius:40px;box-shadow:0 12px 26px rgba(182,135,86,0.45);">
+                  <a href="${url}" target="_blank" style="display:inline-block;padding:17px 44px;${FONT}font-size:16px;line-height:20px;color:#ffffff;font-weight:bold;text-decoration:none;border-radius:40px;letter-spacing:0.3px;">${esc(c.button)} &nbsp;${rtl ? '&larr;' : '&rarr;'}</a>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:14px 0 0 0;${FONT}font-size:12px;line-height:18px;color:#8a90ad;">${esc(l.fallback)}<br><a href="${url}" target="_blank" dir="ltr" style="color:#293b93;text-decoration:underline;word-break:break-all;">${url}</a></p>
+          </td>
+        </tr>
+
+        <!-- Steps -->
+        <tr>
+          <td bgcolor="#ffffff" style="background-color:#ffffff;padding:34px 28px 4px 28px;text-align:${start};">
+            <p style="margin:0 0 6px 0;${FONT}font-size:11px;line-height:14px;letter-spacing:2px;text-transform:uppercase;color:#9a6f43;font-weight:bold;">${esc(l.nextEyebrow)}</p>
+            <p style="margin:0 0 20px 0;${FONT}font-size:22px;line-height:28px;color:#141a4a;font-weight:bold;">${esc(l.nextTitle)}</p>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">${steps}
+            </table>
+          </td>
+        </tr>
+
+        <!-- Numbers -->
+        <tr>
+          <td bgcolor="#ffffff" style="background-color:#ffffff;padding:30px 28px 4px 28px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;border-top:1px solid #eceef6;border-bottom:1px solid #eceef6;">
+              <tr>
+                ${stat('985K+', l.stats[0], '#293b93')}
+                ${stat('7+', l.stats[1], '#b68756', true)}
+                ${stat('20+', l.stats[2], '#293b93')}
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Security note -->
+        <tr>
+          <td bgcolor="#ffffff" style="background-color:#ffffff;padding:26px 28px 6px 28px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#fff8ec" style="width:100%;background-color:#fff8ec;border:1px solid #f1dfbf;border-radius:14px;border-collapse:separate;">
+              <tr>
+                <td width="34" valign="top" style="width:34px;padding:14px 16px;font-size:18px;line-height:20px;">&#128274;</td>
+                <td valign="top" style="padding:14px 6px 14px 16px;${FONT}font-size:13px;line-height:20px;color:#7a5418;text-align:${start};">${c.safe}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Sign-off -->
+        <tr>
+          <td bgcolor="#ffffff" style="background-color:#ffffff;padding:24px 28px 36px 28px;${FONT}text-align:${start};">
+            <p style="margin:0 0 14px 0;font-size:14px;line-height:22px;color:#5b6180;">${esc(c.questions)} <a href="mailto:${esc(supportEmail)}" style="color:#293b93;font-weight:bold;text-decoration:none;">${esc(supportEmail)}</a>.</p>
+            <p style="margin:0;font-size:14px;line-height:22px;color:#5b6180;">${esc(c.regards)}<br><strong style="color:#141a4a;">${esc(c.team)}</strong></p>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td align="center" bgcolor="#0f1438" style="background-color:#0f1438;border-radius:0 0 22px 22px;padding:28px 28px 30px 28px;${FONT}">
+            <p style="margin:0 0 14px 0;font-size:13px;line-height:18px;">
+              <a href="https://www.gtcfx.com" target="_blank" style="color:#e3c7a7;font-weight:bold;text-decoration:none;">www.gtcfx.com</a>
+              <span style="color:#4b5385;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <a href="mailto:${esc(supportEmail)}" style="color:#e3c7a7;font-weight:bold;text-decoration:none;">${esc(supportEmail)}</a>
+            </p>
+            <p style="margin:0 0 12px 0;font-size:11px;line-height:17px;color:#8d95c4;">${esc(received)}</p>
+            <p style="margin:0;font-size:10px;line-height:15px;color:#6c739f;">${esc(disclaimer)}</p>
+            <p style="margin:14px 0 0 0;font-size:10px;line-height:15px;color:#6c739f;">&copy; ${new Date().getFullYear()} GTCFX. ${esc(l.rights)}</p>
+          </td>
+        </tr>
+
       </table>
-    </div>
-  </td></tr></table>
-</body></html>`;
+    </td>
+  </tr>
+</table>
+</body>
+</html>`;
 
   const text = [
     c.dear(name),

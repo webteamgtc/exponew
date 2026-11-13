@@ -52,7 +52,6 @@ export async function POST(req) {
   const code = clean(body.code, 6).replace(/\D/g, '');
   // with forceInviteCode every account goes under the expo's code, whatever the browser sends
   const invite = EXPO.forceInviteCode && EXPO.inviteCode ? EXPO.inviteCode : clean(body.invite, 40) || EXPO.inviteCode;
-  const deepLink = clean(body.deepLink, 200);
   const lang = langOf(clean(body.locale, 10));
 
   if (!LETTERS_RE.test(firstname) || !LETTERS_RE.test(lastname) || !EMAIL_RE.test(email) || !/^\+\d{6,18}$/.test(phone) || !area || !country || !/^\d{6}$/.test(code)) {
@@ -60,19 +59,31 @@ export async function POST(req) {
   }
 
   const password = makePassword();
-  const { ok, data: res } = await portalPost('reg', {
-    code,
-    is_company: 0,
-    area,
-    country,
+  const reg = EXPO.registration ?? {};
+  const fields = {
+    nickname: `${firstname} ${lastname}`,
     email,
     phone,
+    country,
+    // a number, like the other GTC sign-up pages send it (a string or an empty from_type gets "Reg Type Error")
+    type: Number(reg.type ?? 0),
     password,
-    lastname,
+    code,
+    invitation_code: invite,
+    area,
+    from_type: reg.fromType,
+    from_client_id: reg.fromClientId,
+    recommend: reg.recommend,
+    activity_code: reg.activityCode,
+    is_company: 0,
     firstname,
-    ...(invite ? { ref: invite, invite_code: invite } : {}),
-    ...(deepLink ? { deep_link_value: deepLink } : {})
-  });
+    lastname,
+    company_name: ''
+  };
+  // optional fields go out only when set: the CRM validates any value it receives, empty ones included
+  const optional = ['from_type', 'from_client_id', 'recommend', 'activity_code', 'company_name'];
+  for (const k of optional) if (fields[k] === undefined || fields[k] === null || fields[k] === '') delete fields[k];
+  const { ok, data: res } = await portalPost('reg', fields);
   if (!ok) return NextResponse.json({ code: 500, message: res?.message ?? 'Failed to reach GTC API' }, { status: 502 });
   if (res?.code !== 200) return NextResponse.json({ code: res?.code ?? 500, message: res?.message ?? '' }, { status: 200 });
 

@@ -30,6 +30,17 @@ export const EXPO = {
    * while one is empty its button opens the GTC Go page on gtcfx.com in the visitor's language instead.
    */
   apps: { appStore: '', googlePlay: '' },
+  /**
+   * Fixed values sent with every registration (POST web.mygtc.app/api/pub/reg, see src/app/api/expo/register/route.js).
+   * Leave a value empty when the CRM gave you none for this expo.
+   */
+  registration: {
+    type: 0,
+    activityCode: '',
+    fromType: '',
+    fromClientId: '',
+    recommend: ''
+  },
   /** shown in the welcome e-mail */
   supportEmail: 'support@gtcfx.com'
 };
