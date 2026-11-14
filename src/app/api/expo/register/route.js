@@ -4,7 +4,7 @@ import { EXPO } from '@/config/expo';
 import { langOf } from '@/i18n/locales';
 import { expoWelcomeEmail } from '@/lib/emails/expoWelcome';
 import { sendMail } from '@/lib/mailer';
-import { clientIp, portalPost, rateLimit, tooMany } from '@/lib/api';
+import { clientIp, crmWebContext, portalPost, rateLimit, tooMany } from '@/lib/api';
 
 /**
  * Opens the visitor's GTC Standard account (POST from ExpoRegisterForm). The visitor doesn't choose a password:
@@ -83,7 +83,9 @@ export async function POST(req) {
   // optional fields go out only when set: the CRM validates any value it receives, empty ones included
   const optional = ['from_type', 'from_client_id', 'recommend', 'activity_code', 'company_name'];
   for (const k of optional) if (fields[k] === undefined || fields[k] === null || fields[k] === '') delete fields[k];
-  const { ok, data: res } = await portalPost('reg', fields, clientIp(req));
+
+  const { ip, host, headers } = await crmWebContext(req, lang);
+  const { ok, data: res } = await portalPost('reg', fields, ip, { headers, origin: host });
   if (!ok) return NextResponse.json({ code: 500, message: res?.message ?? 'Failed to reach GTC API' }, { status: 502 });
   if (res?.code !== 200) return NextResponse.json({ code: res?.code ?? 500, message: res?.message ?? '' }, { status: 200 });
 

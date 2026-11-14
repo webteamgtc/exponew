@@ -75,6 +75,19 @@ const RSA_ALGS = new Set(['RSA-OAEP', 'RSA-OAEP-256', 'RSA-OAEP-SHA256', 'RSA-OA
  * A fresh key + nonce is fetched for every call. Resolves to {} on any failure: the CRM's own web app then sends
  * get_code without the headers too, so the request still goes out.
  */
+/** Headers the CRM expects on PC2.0 web calls (get_code, reg, …): language, app-type, and the encrypted site-visit proof. */
+export async function crmWebContext(req, locale) {
+  const ip = clientIp(req);
+  const host = siteHost(req);
+  const lang = crmLang(String(locale ?? ''));
+  const proof = await siteVisitHeaders(host, ip);
+  return {
+    ip,
+    host,
+    headers: { 'app-type': 'web', 'Accept-Language': lang, 'X-App-Lang': lang, ...proof },
+  };
+}
+
 export async function siteVisitHeaders(host, ip) {
   try {
     const { ok, data } = await portalPost('rsa_key', { scene: 'site_visit', client: 'pc' }, ip, { origin: host });
