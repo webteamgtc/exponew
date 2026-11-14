@@ -16,6 +16,6 @@ export async function POST(req) {
   if (!EMAIL_RE.test(email)) return NextResponse.json({ code: 400, message: 'Invalid email', data: [] }, { status: 400 });
 
   // only the email is forwarded, never the rest of the request body
-  const { data, status } = await portalPost('check_email', { email });
+  const { data, status } = await portalPost('check_email', { email }, clientIp(req));
   return NextResponse.json(data, { status });
 }

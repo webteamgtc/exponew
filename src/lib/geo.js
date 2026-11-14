@@ -1,5 +1,5 @@
 import 'server-only';
-import { clientIp } from '@/lib/api';
+import { clientIp, isPrivateIp } from '@/lib/api';
 
 /**
  * The visitor's country (ISO code like "UZ") from their IP address, or '' when unknown.
@@ -16,23 +16,13 @@ const cache = new Map();
 
 const isIso = (v) => /^[A-Z]{2}$/.test(v) && v !== 'XX' && v !== 'T1';
 
-function isPrivate(ip) {
-  return (
-    !ip ||
-    ip === 'unknown' ||
-    ip === '::1' ||
-    /^(127\.|10\.|192\.168\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.)/.test(ip) ||
-    /^(fc|fd|fe80)/i.test(ip)
-  );
-}
-
 export async function visitorCountry(req) {
   const header = (req.headers.get('x-vercel-ip-country') || req.headers.get('cf-ipcountry') || req.headers.get('cloudfront-viewer-country') || '').trim().toUpperCase();
   if (isIso(header)) return header;
 
   if (process.env.GEOIP_LOOKUP === 'off') return '';
   const ip = clientIp(req);
-  if (isPrivate(ip)) return '';
+  if (isPrivateIp(ip)) return '';
 
   const hit = cache.get(ip);
   if (hit && hit.until > Date.now()) return hit.country;

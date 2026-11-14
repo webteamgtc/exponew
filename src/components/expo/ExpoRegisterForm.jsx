@@ -121,7 +121,7 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
         toast.error(check?.message || t('errors.emailRegistered'));
         return;
       }
-      const res = await post('/api/gtc/get-code', { email, type: '0' });
+      const res = await post('/api/gtc/get-code', { email, type: '0', locale });
       if (res?.code === 200) {
         setCodeSent(true);
         setCooldown(RESEND_SECONDS);

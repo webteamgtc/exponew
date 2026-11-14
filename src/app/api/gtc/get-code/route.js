@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { clientIp, portalPost, rateLimit, tooMany } from '@/lib/api';
+import { clientIp, crmLang, portalPost, rateLimit, siteHost, siteVisitHeaders, tooMany } from '@/lib/api';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -18,7 +18,13 @@ export async function POST(req) {
   if (!EMAIL_RE.test(email)) return NextResponse.json({ code: 400, message: 'Invalid email', data: [] }, { status: 400 });
   if (!rateLimit(`code-email:${email.toLowerCase()}`, 3, 10 * 60_000)) return tooMany();
 
+  // The CRM wants an encrypted "site visit" proof in x-r-a/b/c before it sends a code (rsa_key -> RSA-OAEP).
+  const host = siteHost(req);
+  const lang = crmLang(String(body?.locale ?? ''));
+  const proof = await siteVisitHeaders(host, ip);
+  const headers = { 'app-type': 'web', 'Accept-Language': lang, 'X-App-Lang': lang, ...proof };
+
   // only the email (and the fixed code type) is forwarded, never the rest of the request body
-  const { data, status } = await portalPost('get_code', { email, type: '0' });
+  const { data, status } = await portalPost('get_code', { email, type: '0' }, ip, { headers, origin: host });
   return NextResponse.json(data, { status });
 }

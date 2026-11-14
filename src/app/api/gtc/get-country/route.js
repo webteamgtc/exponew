@@ -10,7 +10,7 @@ let lastGood = null; // the CRM's last good answer, served if it starts failing
  */
 export async function POST(req) {
   if (!rateLimit(`country:${clientIp(req)}`, 30, 60_000)) return tooMany();
-  const { ok, data, status } = await portalPost('get_country');
+  const { ok, data, status } = await portalPost('get_country', undefined, clientIp(req));
   if (ok && data?.code === 200 && Array.isArray(data.data) && data.data.length) {
     lastGood = data;
     return NextResponse.json(data, { status });
