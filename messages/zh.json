@@ -4,10 +4,10 @@
     "description": "在 {expo} 开设 GTC 标准账户，即可获得 ${amount} 美元交易赠金，无需入金。"
   },
   "hero": {
-    "kicker": "官方赞助商",
+    "kicker": "官方赞助商 · 展会专享",
     "titleLine1": "迪拜在召唤。",
-    "titleLine2": "交易世界正在汇聚。",
-    "sponsorIntro": "GTCFX 很荣幸以官方赞助商身份加入 2026 迪拜外汇交易者峰会，将国际视野、市场专长以及对有意义合作的承诺带到阿联酋心脏地带。",
+    "titleLine2": "解锁您的 ${amount} 赠金。",
+    "sponsorIntro": "GTCFX 为 2026 迪拜外汇交易者峰会官方赞助商。数分钟内完成注册，无需入金，即可领取 ${amount} 美元交易赠金，探索外汇、黄金、指数等市场。",
     "dateLabel": "日期",
     "venueLabel": "地点",
     "bonusCurrency": "USD",

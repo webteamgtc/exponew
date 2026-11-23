@@ -53,10 +53,10 @@ export default function ExpoHero() {
           <h1 className="heading-page mt-4">
             <WordReveal text={t('titleLine1')} immediate />
             <br />
-            <WordReveal text={t('titleLine2')} immediate delay={0.25} wordClassName="heading-accent" />
+            <WordReveal text={t('titleLine2', { amount: EXPO.bonus })} immediate delay={0.25} wordClassName="heading-accent" />
           </h1>
           <HeroIn delay={0.2} as="p" className="mt-5 max-w-lg text-sm leading-relaxed text-white/75 md:text-base">
-            {t('sponsorIntro')}
+            {t('sponsorIntro', { amount: EXPO.bonus })}
           </HeroIn>
 
           {/* the bonus: liquid-gold amount in a glass card */}

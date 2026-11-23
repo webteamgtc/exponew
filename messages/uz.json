@@ -4,10 +4,10 @@
     "description": "{expo} doirasida GTC Standard hisobini oching va {amount} USD savdo bonusini oling. Depozit talab qilinmaydi."
   },
   "hero": {
-    "kicker": "Rasmiy homiy",
+    "kicker": "Rasmiy homiy · Ekspo maxsus taklif",
     "titleLine1": "Dubay chaqirmoqda.",
-    "titleLine2": "Savdo olami jamlanmoqda.",
-    "sponsorIntro": "GTCFX Forex Traders Summit Dubai 2026 loyihasida rasmiy homiy sifatida qatnashishdan faxrlanadi — xalqaro nuqtayi nazar, bozor tajribasi va mazmunli hamkorlikka sodiqligimizni BAA qalbiga olib kelamiz.",
+    "titleLine2": "${amount} bonusingizni oching.",
+    "sponsorIntro": "GTCFX Forex Traders Summit Dubai 2026 da rasmiy homiy. Bir necha daqiqada roʻyxatdan oʻting — depozitsiz — va foreks, oltin, indekslar uchun ${amount} AQSh dollaridagi savdo bonusini oling.",
     "dateLabel": "Sana",
     "venueLabel": "Joy",
     "bonusCurrency": "USD",
