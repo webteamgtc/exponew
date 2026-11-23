@@ -191,12 +191,6 @@
         "prefix": "",
         "suffix": "+",
         "label": "支持语言"
-      },
-      {
-        "value": 850,
-        "prefix": "$",
-        "suffix": " 十亿",
-        "label": "月交易量"
       }
     ]
   },
