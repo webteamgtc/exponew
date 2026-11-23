@@ -112,12 +112,6 @@ export default function ExpoHero() {
                 {t('dateLabel')}: {EXPO.dates}
               </span>
             </span>
-            <span dir="auto" className="inline-flex items-center gap-2 rounded-2xl bg-white px-3.5 py-2 leading-snug shadow-sm ring-1 ring-brand/10">
-              <MapPin className="size-3.5 shrink-0 text-gold" />
-              <span>
-                {t('venueLabel')}: {EXPO.venue}
-              </span>
-            </span>
             {EXPO.booth && (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 shadow-sm ring-1 ring-brand/10">
                 <MapPin className="size-3.5 text-gold" /> {t('boothBadge', { booth: EXPO.booth })}
