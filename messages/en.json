@@ -4,9 +4,12 @@
     "description": "Open a GTC Standard account at {expo} and get a ${amount} USD trading bonus. No deposit needed."
   },
   "hero": {
-    "kicker": "Your trading journey starts here",
-    "titleLine1": "A head start.",
-    "titleLine2": "A world of opportunity.",
+    "kicker": "Official Sponsor",
+    "titleLine1": "Dubai is Calling.",
+    "titleLine2": "The Trading World is Gathering.",
+    "sponsorIntro": "GTCFX is proud to join Forex Traders Summit Dubai 2026 as an Official Sponsor, bringing our international perspective, market expertise, and commitment to meaningful partnerships to the heart of the UAE.",
+    "dateLabel": "Date",
+    "venueLabel": "Venue",
     "bonusCurrency": "USD",
     "bonusLabel": "Trading bonus",
     "noDeposit": "No deposit needed.",

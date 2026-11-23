@@ -55,6 +55,9 @@ export default function ExpoHero() {
             <br />
             <WordReveal text={t('titleLine2')} immediate delay={0.25} wordClassName="heading-accent" />
           </h1>
+          <HeroIn delay={0.2} as="p" className="mt-5 max-w-lg text-sm leading-relaxed text-white/75 md:text-base">
+            {t('sponsorIntro')}
+          </HeroIn>
 
           {/* the bonus: liquid-gold amount in a glass card */}
           <HeroIn delay={0.3} className="relative mt-7 overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] backdrop-blur-sm md:p-6">
@@ -98,11 +101,21 @@ export default function ExpoHero() {
         <motion.div aria-hidden className="absolute -end-24 -top-24 -z-10 size-96 rounded-full bg-brand-200/50 blur-[100px]" animate={{ x: [0, -40, 0], y: [0, 40, 0] }} transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }} />
         <motion.div aria-hidden className="absolute -bottom-24 -start-24 -z-10 size-96 rounded-full bg-gold-200/60 blur-[100px]" animate={{ x: [0, 50, 0], y: [0, -30, 0] }} transition={{ duration: 19, repeat: Infinity, ease: 'easeInOut' }} />
         <div className="flex flex-1 flex-col justify-center px-4 py-10 md:px-12 lg:me-auto lg:w-full lg:max-w-[40rem]">
-          <HeroIn className="mb-6 flex flex-wrap items-center gap-2 text-xs font-semibold text-brand">
+          <HeroIn className="mb-6 flex flex-col gap-2 text-xs font-semibold text-brand sm:flex-row sm:flex-wrap">
+            <span dir="auto" className="inline-flex items-center gap-2 rounded-2xl bg-white px-3.5 py-2 leading-snug shadow-sm ring-1 ring-brand/10">
+              <CalendarDays className="size-3.5 shrink-0 text-gold" />
+              <span>{EXPO.name}</span>
+            </span>
             <span dir="auto" className="inline-flex items-center gap-2 rounded-2xl bg-white px-3.5 py-2 leading-snug shadow-sm ring-1 ring-brand/10">
               <CalendarDays className="size-3.5 shrink-0 text-gold" />
               <span>
-                {EXPO.name}, {EXPO.dates}, {EXPO.city} ({EXPO.kind})
+                {t('dateLabel')}: {EXPO.dates}
+              </span>
+            </span>
+            <span dir="auto" className="inline-flex items-center gap-2 rounded-2xl bg-white px-3.5 py-2 leading-snug shadow-sm ring-1 ring-brand/10">
+              <MapPin className="size-3.5 shrink-0 text-gold" />
+              <span>
+                {t('venueLabel')}: {EXPO.venue}
               </span>
             </span>
             {EXPO.booth && (

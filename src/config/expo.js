@@ -1,8 +1,8 @@
 /**
  * Everything about the current expo in one place: change these for the next show. Page text is in messages/<lang>.json.
  *
- *   name, dates,   shown as one line above the form: "name, dates, city (kind)". name is also used in the page title
- *   city, kind     and in the welcome e-mail (no expo logo: it changes every show)
+ *   name, dates, venue  shown above the form (with Date / Venue labels from messages). name is also used in the page title
+ *   city              short city for e-mails; welcome e-mail (no expo logo: it changes every show)
  *   booth          shown as "Visit us at Booth …" when set
  *   bonus          the welcome bonus shown on the page, the button and in the e-mail
  *   inviteCode     the invitation (IB / partner) code every account opened on this page is registered under.
@@ -11,10 +11,10 @@
  *                  a code in the link (?ref=, ?code=…) or typed in the form wins.
  */
 export const EXPO = {
-  name: 'Traders Fair 2026 - Uzbekistan',
-  dates: '14 NOVEMBER',
-  city: 'Tashkent',
-  kind: 'Financial Event',
+  name: 'Forex Traders Expo & Summit Dubai 2026',
+  dates: '24–25 November 2026',
+  venue: 'Festival Arena, Dubai, UAE',
+  city: 'Dubai',
   booth: '',
   bonus: 50,
   currency: 'USD',
