@@ -12,7 +12,8 @@ import { clientIp, crmWebContext, portalPost, rateLimit, tooMany } from '@/lib/a
  *   2. creates a strong password here on the server (never sent to the browser),
  *   3. registers the account in the CRM: same call and payload as the main site's live-account form
  *      (web.mygtc.app/api/pub/reg, base URL from GTC_PORTAL_API),
- *   4. e-mails the login details (src/lib/emails/expoWelcome.js) in the visitor's language.
+ *   4. e-mails the login details (src/lib/emails/expoWelcome.js) in the visitor's language,
+ *   5. posts the registration to the Zapier hook (notifyZapier below), alongside the e-mail.
  * → { code: 200, emailSent } on success, otherwise the CRM's { code, message } (e.g. wrong code, email taken).
  */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -90,6 +91,31 @@ export async function POST(req) {
   if (res?.code !== 200) return NextResponse.json({ code: res?.code ?? 500, message: res?.message ?? '' }, { status: 200 });
 
   const mail = expoWelcomeEmail({ lang, name: firstname, email, password, portalUrl: EXPO.loginUrl, supportEmail: EXPO.supportEmail, expoName: EXPO.name, amount: EXPO.bonus });
-  const emailSent = await sendMail({ to: email, ...mail });
+  const [emailSent] = await Promise.all([
+    sendMail({ to: email, ...mail }),
+    notifyZapier({ firstname, lastname, email, phone, area, country, invitation_code: invite, deep_link: clean(body.deepLink, 300), locale: lang, expo: EXPO.name, ip })
+  ]);
   return NextResponse.json({ code: 200, message: res?.message ?? '', emailSent });
+}
+
+/**
+ * Sends the new registration to the Zapier catch hook (ZAPIER_WEBHOOK_URL, default below). Never the password or the
+ * e-mail code. Best effort: a failure or a slow hook is logged and never fails the visitor's registration.
+ */
+const ZAPIER_URL = process.env.ZAPIER_WEBHOOK_URL ?? 'https://hooks.zapier.com/hooks/catch/test';
+async function notifyZapier(data) {
+  if (!ZAPIER_URL) return false;
+  try {
+    const r = await fetch(ZAPIER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...data, registered_at: new Date().toISOString() }),
+      signal: AbortSignal.timeout(5000)
+    });
+    if (!r.ok) console.error('[expo/register] Zapier hook failed:', r.status);
+    return r.ok;
+  } catch (e) {
+    console.error('[expo/register] Zapier hook error:', e?.message);
+    return false;
+  }
 }
