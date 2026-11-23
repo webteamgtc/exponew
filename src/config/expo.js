@@ -18,7 +18,7 @@ export const EXPO = {
   booth: '',
   bonus: 50,
   currency: 'USD',
-  inviteCode: 'Xmu69pW9',
+  inviteCode: 'VsL5fGK2',
   forceInviteCode: true,
   termsUrl: 'https://www.gtcfx.com/terms',
   bonusTermsUrl: 'https://www.gtcfx.com/terms',

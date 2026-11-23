@@ -12,7 +12,10 @@ export function Stats() {
       <div className="container-x relative">
         <Stagger className="grid grid-cols-2 gap-y-14 lg:grid-cols-3" stagger={0.15}>
           {items.map((s, i) => (
-            <StaggerItem key={s.label} className={cn('relative px-4 text-center', i > 0 && 'lg:border-s lg:border-white/10')}>
+            <StaggerItem
+              key={s.label}
+              className={cn('relative px-4 text-center', i === 0 && 'hidden lg:block', i > 0 && 'lg:border-s lg:border-white/10')}
+            >
               <div className="text-gradient-gold text-3xl font-bold tracking-tight md:text-4xl xl:text-5xl lg:whitespace-nowrap">
                 {/* grouping: false keeps licence numbers as written (FSP No. 51545, not 51,545) */}
                 <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} grouping={s.grouping !== false} />
