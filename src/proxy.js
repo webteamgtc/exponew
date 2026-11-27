@@ -15,7 +15,7 @@ import { routing } from './i18n/routing';
  * Node server, local development) only steps 1 and 3 apply. A link with a language (/uz, /ru…) is never changed, so a
  * QR code can also point straight at /uz or /ru.
  */
-const COUNTRY_LOCALE = { UZ: 'uz', RU: 'ru' };
+const COUNTRY_LOCALE = { UZ: 'uz', RU: 'ru', EG: 'ar' };
 
 const intl = createMiddleware(routing);
 

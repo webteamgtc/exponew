@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { ClipboardList, ShieldCheck, WalletCards } from 'lucide-react';
 import { Reveal, SpotlightCard, Stagger, StaggerItem } from '@/components/motion';
-import { EXPO } from '@/config/expo';
+import { EXPO, hasBonusOffer } from '@/config/expo';
 
 const ICONS = { funds: WalletCards, deposit: ShieldCheck, next: ClipboardList };
 
@@ -28,7 +28,9 @@ export default function Benefits() {
                     <Icon className="size-7" strokeWidth={1.6} />
                   </span>
                   <h3 className="heading-title relative mt-6">{item.title}</h3>
-                  <p className="relative mt-2 text-sm leading-relaxed text-ink/65">{item.text.replace('{amount}', EXPO.bonus)}</p>
+                  <p className="relative mt-2 text-sm leading-relaxed text-ink/65">
+                    {hasBonusOffer() ? item.text.replace('{amount}', EXPO.bonus) : item.textNoBonus ?? item.text}
+                  </p>
                 </SpotlightCard>
               </StaggerItem>
             );

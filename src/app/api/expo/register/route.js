@@ -7,7 +7,7 @@ import { sendMail } from '@/lib/mailer';
 import { clientIp, crmWebContext, portalPost, rateLimit, tooMany } from '@/lib/api';
 
 /**
- * Opens the visitor's GTC Standard account (POST from ExpoRegisterForm). The visitor doesn't choose a password:
+ * Opens the visitor's GTC Cent account (POST from ExpoRegisterForm). The visitor doesn't choose a password:
  *   1. checks the fields,
  *   2. creates a strong password here on the server (never sent to the browser),
  *   3. registers the account in the CRM: same call and payload as the main site's live-account form

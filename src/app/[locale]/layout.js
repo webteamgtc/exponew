@@ -20,8 +20,9 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
-  const title = t('title', { expo: EXPO.name, amount: EXPO.bonus });
-  const description = t('description', { expo: EXPO.name, amount: EXPO.bonus });
+  const bonus = EXPO.bonusOffer !== false && Number(EXPO.bonus) > 0;
+  const title = bonus ? t('titleBonus', { expo: EXPO.name, amount: EXPO.bonus }) : t('title', { expo: EXPO.name });
+  const description = bonus ? t('descriptionBonus', { expo: EXPO.name, amount: EXPO.bonus }) : t('description', { expo: EXPO.name });
   return {
     title,
     description,

@@ -21,12 +21,9 @@ export default function ExpoPage() {
       <main>
         <ExpoHero />
         <div className="is-dark relative bg-brand-950 text-white">
-          <Stats />
         </div>
-        <Benefits />
-        <Legal />
         <Platforms />
-        <Faq />
+        <Legal />
         <Awards />
       </main>
       <ExpoFooter />

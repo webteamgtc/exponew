@@ -12,11 +12,17 @@ const COPY = {
     subject: 'Welcome to GTCFX — your login details',
     banner: 'Your account is ready',
     dear: (n) => `Dear ${n},`,
-    intro: (expo, amount) => `Thank you for opening your GTC Standard account with us at ${expo}. Your $${amount} trading bonus is waiting: log in with the details below to activate it.`,
+    intro: (expo, amount) => `Thank you for opening your GTC Cent account with us at ${expo}. Your $${amount} trading bonus is waiting: log in with the details below to activate it.`,
+    introNoBonus: (expo) => `Thank you for opening your GTC Cent account with us at ${expo}. Log in with the details below to get started.`,
     steps: (amount) => [
       ['Log in to the client portal', 'Use the login details below to sign in.'],
       ['Activate your account', 'Complete your profile and verify your identity to unlock the bonus.'],
       ['Start trading', `Trade real markets with your $${amount} trading bonus.`]
+    ],
+    stepsNoBonus: () => [
+      ['Log in to the client portal', 'Use the login details below to sign in.'],
+      ['Activate your account', 'Complete your profile and verify your identity.'],
+      ['Start trading', 'Trade forex, metals, indices and more on MT4, MT5 or GTC Go.']
     ],
     details: 'Your login details',
     url: 'Login URL',
@@ -38,11 +44,17 @@ const COPY = {
     subject: 'مرحبًا بك في GTCFX — بيانات تسجيل الدخول',
     banner: 'حسابك جاهز',
     dear: (n) => `عزيزي/عزيزتي ${n}،`,
-    intro: (expo, amount) => `شكرًا لفتح حساب GTC Standard معنا في ${expo}. مكافأة التداول البالغة ${amount}$ بانتظارك: سجّل الدخول بالبيانات أدناه لتفعيلها.`,
+    intro: (expo, amount) => `شكرًا لفتح حساب GTC Cent معنا في ${expo}. مكافأة التداول البالغة ${amount}$ بانتظارك: سجّل الدخول بالبيانات أدناه لتفعيلها.`,
+    introNoBonus: (expo) => `شكرًا لفتح حساب GTC Cent معنا في ${expo}. سجّل الدخول بالبيانات أدناه للبدء.`,
     steps: (amount) => [
       ['سجّل الدخول إلى بوابة العملاء', 'استخدم بيانات تسجيل الدخول أدناه.'],
       ['فعّل حسابك', 'أكمل ملفك الشخصي وتحقق من هويتك لتفعيل المكافأة.'],
       ['ابدأ التداول', `تداول في الأسواق الحقيقية بمكافأة التداول البالغة ${amount}$.`]
+    ],
+    stepsNoBonus: () => [
+      ['سجّل الدخول إلى بوابة العملاء', 'استخدم بيانات تسجيل الدخول أدناه.'],
+      ['فعّل حسابك', 'أكمل ملفك الشخصي وتحقق من هويتك.'],
+      ['ابدأ التداول', 'تداول الفوركس والمعادن والمؤشرات وغيرها عبر MT4 أو MT5 أو تطبيق GTC Go.']
     ],
     details: 'بيانات تسجيل الدخول',
     url: 'رابط الدخول',
@@ -64,7 +76,7 @@ const COPY = {
     subject: '欢迎加入 GTCFX — 您的登录信息',
     banner: '您的账户已开通',
     dear: (n) => `尊敬的 ${n}：`,
-    intro: (expo, amount) => `感谢您在 ${expo} 开设 GTC 标准账户。您的 ${amount} 美元交易赠金已在等您：请使用以下信息登录并激活。`,
+    intro: (expo, amount) => `感谢您在 ${expo} 开设 GTC 美分账户。您的 ${amount} 美元交易赠金已在等您：请使用以下信息登录并激活。`,
     steps: (amount) => [
       ['登录客户门户', '使用以下登录信息登录。'],
       ['激活您的账户', '完善个人资料并完成身份验证，即可解锁赠金。'],
@@ -90,7 +102,7 @@ const COPY = {
     subject: 'GTCFX — xush kelibsiz: kirish maʼlumotlaringiz',
     banner: 'Hisobingiz tayyor',
     dear: (n) => `Hurmatli ${n},`,
-    intro: (expo, amount) => `${expo} doirasida GTC Standard hisobini ochganingiz uchun rahmat. Sizning $${amount} savdo bonusingiz kutmoqda: uni faollashtirish uchun quyidagi maʼlumotlar bilan tizimga kiring.`,
+    intro: (expo, amount) => `${expo} doirasida GTC Cent hisobini ochganingiz uchun rahmat. Sizning $${amount} savdo bonusingiz kutmoqda: uni faollashtirish uchun quyidagi maʼlumotlar bilan tizimga kiring.`,
     steps: (amount) => [
       ['Mijozlar portaliga kiring', 'Tizimga kirish uchun quyidagi maʼlumotlardan foydalaning.'],
       ['Hisobingizni faollashtiring', 'Bonusni ochish uchun profilingizni toʻldiring va shaxsingizni tasdiqlang.'],
@@ -116,7 +128,7 @@ const COPY = {
     subject: 'Добро пожаловать в GTCFX — ваши данные для входа',
     banner: 'Ваш счёт готов',
     dear: (n) => `Уважаемый(ая) ${n},`,
-    intro: (expo, amount) => `Спасибо, что открыли счёт GTC Standard у нас на ${expo}. Ваш торговый бонус $${amount} ждёт вас: войдите с указанными ниже данными, чтобы активировать его.`,
+    intro: (expo, amount) => `Спасибо, что открыли счёт GTC Cent у нас на ${expo}. Ваш торговый бонус $${amount} ждёт вас: войдите с указанными ниже данными, чтобы активировать его.`,
     steps: (amount) => [
       ['Войдите в клиентский портал', 'Используйте указанные ниже данные для входа.'],
       ['Активируйте счёт', 'Заполните профиль и подтвердите личность, чтобы разблокировать бонус.'],
@@ -152,6 +164,7 @@ const FONT = 'font-family:Arial,Helvetica,sans-serif;';
 
 export function expoWelcomeEmail({ lang = 'en', name, email, password, portalUrl, supportEmail, expoName, amount }) {
   const c = COPY[lang] ?? COPY.en;
+  const withBonus = Number(amount) > 0;
   const l = LAYOUT[lang] ?? LAYOUT.en;
   const rtl = c.dir === 'rtl';
   const start = rtl ? 'right' : 'left';
@@ -161,8 +174,7 @@ export function expoWelcomeEmail({ lang = 'en', name, email, password, portalUrl
   const [, received, disclaimer] = c.footer(supportEmail);
   const label = `margin:0;font-size:11px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#8d95c4;`;
 
-  const steps = c
-    .steps(amount)
+  const steps = (withBonus ? c.steps(amount) : (c.stepsNoBonus ? c.stepsNoBonus(amount) : c.steps(amount)))
     .map(([title, text], i) => {
       const last = i === 2;
       const badge = last ? 'background-color:#b68756;background-image:linear-gradient(135deg,#e3c7a7 0%,#b68756 60%);' : 'background-color:#293b93;';
@@ -239,7 +251,7 @@ export function expoWelcomeEmail({ lang = 'en', name, email, password, portalUrl
               </tr>
             </table>
             <h1 style="margin:22px 0 0 0;${FONT}font-size:34px;line-height:42px;color:#ffffff;font-weight:bold;letter-spacing:-0.5px;">${esc(l.welcome)}<br><span style="color:#e3c7a7;">${esc(name)}</span></h1>
-            <p style="margin:16px auto 0 auto;max-width:440px;${FONT}font-size:15px;line-height:24px;color:#c3c9ea;">${esc(c.intro(expoName, amount))}</p>
+            <p style="margin:16px auto 0 auto;max-width:440px;${FONT}font-size:15px;line-height:24px;color:#c3c9ea;">${esc(withBonus ? c.intro(expoName, amount) : (c.introNoBonus ? c.introNoBonus(expoName) : c.intro(expoName, amount)))}</p>
 
             <!-- Access card -->
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:separate;margin-top:34px;">
@@ -370,7 +382,7 @@ export function expoWelcomeEmail({ lang = 'en', name, email, password, portalUrl
   const text = [
     c.dear(name),
     '',
-    c.intro(expoName, amount),
+    withBonus ? c.intro(expoName, amount) : (c.introNoBonus ? c.introNoBonus(expoName) : c.intro(expoName, amount)),
     '',
     ...c.steps(amount).map(([title, t], i) => `${i + 1}. ${title} — ${t}`),
     '',

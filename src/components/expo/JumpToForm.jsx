@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { Gift } from 'lucide-react';
-import { EXPO } from '@/config/expo';
+import { EXPO, hasBonusOffer } from '@/config/expo';
 
 export default function JumpToForm({ targetId }) {
   const t = useTranslations('form');
@@ -32,7 +32,8 @@ export default function JumpToForm({ targetId }) {
           onClick={() => document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
           className="bonus-cta fixed inset-x-4 bottom-[calc(1rem+env(safe-area-inset-bottom))] z-40 flex h-13 items-center justify-center gap-2 rounded-full text-base font-semibold text-white lg:hidden"
         >
-          <Gift className="size-5" /> {t('submit', { amount: EXPO.bonus })}
+          {hasBonusOffer() ? <Gift className="size-5" /> : null}{' '}
+          {hasBonusOffer() ? t('submitBonus', { amount: EXPO.bonus }) : t('submit')}
         </motion.button>
       )}
     </AnimatePresence>

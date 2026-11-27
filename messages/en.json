@@ -1,20 +1,22 @@
 {
   "meta": {
-    "title": "GTCFX at {expo} | Get a ${amount} trading bonus",
-    "description": "Open a GTC Standard account at {expo} and get a ${amount} USD trading bonus. No deposit needed."
+    "title": "GTCFX at {expo}",
+    "description": "Open a GTC Cent account at {expo}. Access global financial markets with GTCFX.",
+    "titleBonus": "GTCFX at {expo} | Get a ${amount} trading bonus",
+    "descriptionBonus": "Open a GTC Cent account at {expo} and get a ${amount} USD trading bonus. No deposit needed."
   },
   "hero": {
-    "kicker": "Official Sponsor · Expo exclusive",
-    "titleLine1": "Dubai is calling.",
-    "titleLine2": "Unlock your ${amount} bonus.",
-    "sponsorIntro": "GTCFX is Official Sponsor at Forex Traders Summit Dubai 2026. Register in minutes—no deposit needed—and claim your ${amount} USD trading bonus to explore forex, gold, indices and more.",
+    "kicker": "Official Sponsor · Smart Vision Summit Cairo 2026",
+    "titleLine1": "From Cairo to global markets",
+    "titleLine2": "With GTCFX",
+    "sponsorIntro": "Open your GTC Cent account with GTCFX and access an integrated trading experience across global financial markets.",
     "dateLabel": "Date",
     "venueLabel": "Venue",
     "bonusCurrency": "USD",
     "bonusLabel": "Trading bonus",
     "noDeposit": "No deposit needed.",
-    "lead": "Open a GTC Standard account and put your next move into motion with a ${amount} trading bonus.",
-    "terms": "Eligibility and bonus terms apply.",
+    "lead": "Open a GTC Cent account and put your next move into motion with a ${amount} trading bonus.",
+    "terms": "Terms and conditions apply.",
     "boothBadge": "Visit us at Booth {booth}",
     "stepsDetailed": [
       {
@@ -25,15 +27,30 @@
       {
         "id": "activate",
         "label": "Activate",
-        "text": "Log in and complete your profile to unlock the bonus."
+        "text": "Log in and complete your profile to verify your account."
       },
       {
         "id": "trade",
         "label": "Start trading",
-        "text": "Trade real markets with your ${amount} bonus."
+        "text": "Trade forex, metals, indices and more on MT4, MT5 or GTC Go."
       }
     ],
     "stepsTitle": "How it works",
+    "spotlightTitle": "At the summit with GTCFX",
+    "spotlight": [
+      {
+        "title": "Regulated global broker",
+        "text": "GTCFX entities are licensed across multiple jurisdictions with global market expertise."
+      },
+      {
+        "title": "Cent account to start",
+        "text": "Open a GTC Cent account and access real markets with a clear, quick onboarding path."
+      },
+      {
+        "title": "Platforms on every device",
+        "text": "Trade on MetaTrader 4, MetaTrader 5 and the GTC Go app wherever you are."
+      }
+    ],
     "marketsLabel": "Trade the markets you know",
     "markets": [
       "EUR/USD",
@@ -49,9 +66,9 @@
     ]
   },
   "form": {
-    "eyebrow": "${amount} welcome bonus",
+    "eyebrow": "Open your account",
     "title": "Register now",
-    "subtitle": "Create your account to claim your ${amount} trading bonus.",
+    "subtitle": "Register in minutes to access global markets with GTCFX.",
     "firstName": "First name",
     "firstNamePlaceholder": "e.g. Alex",
     "lastName": "Last name",
@@ -78,7 +95,7 @@
     "bonusTermsLink": "Bonus Terms",
     "and": "and",
     "agreementLink": "Client Agreement",
-    "submit": "Get my ${amount} bonus",
+    "submit": "Register now",
     "submitting": "Opening your account…",
     "secure": "256-bit encrypted. Your details are safe with us.",
     "progress": "{done} of {total} completed",
@@ -103,7 +120,10 @@
       "codeError": "We couldn’t send the code. Please try again.",
       "registrationFailed": "We couldn’t open your account. Please try again."
     },
-    "passwordNote": "No password to create: we’ll set up your account and email your login details as soon as it’s open."
+    "passwordNote": "No password to create: we’ll set up your account and email your login details as soon as it’s open.",
+    "eyebrowBonus": "${amount} welcome bonus",
+    "subtitleBonus": "Create your account to claim your ${amount} trading bonus.",
+    "submitBonus": "Get my ${amount} bonus"
   },
   "success": {
     "eyebrow": "Registration complete",
@@ -145,17 +165,20 @@
       {
         "id": "funds",
         "title": "Real funds. Real markets.",
-        "text": "Use your {amount} USD to trade real markets, not demo simulations. Trade the real financial markets."
+        "text": "Use your {amount} USD to trade real markets, not demo simulations. Trade the real financial markets.",
+        "textNoBonus": "Trade real financial markets—forex, metals, indices and more—not demo simulations only."
       },
       {
         "id": "deposit",
         "title": "Start without a deposit.",
-        "text": "Test strategies or explore our trading platform. Your funds stay untouched while you use your {amount} USD tradable bonus."
+        "text": "Test strategies or explore our trading platform. Your funds stay untouched while you use your {amount} USD tradable bonus.",
+        "textNoBonus": "Register and explore our platforms on MT4, MT5 and GTC Go in a few simple steps."
       },
       {
         "id": "next",
         "title": "Know your next step.",
-        "text": "Register, activate your account, then trade. Review the bonus and withdrawal terms before you begin."
+        "text": "Register, activate your account, then trade. Review the bonus and withdrawal terms before you begin.",
+        "textNoBonus": "Register, activate your account, then trade. Review the terms before you begin."
       }
     ]
   },
@@ -235,13 +258,13 @@
   "faq": {
     "eyebrow": "Before you sign up",
     "titleA": "Questions about",
-    "titleB": "your bonus?",
+    "titleB": "opening an account?",
     "subtitle": "Here’s what visitors ask us most. Still unsure? Our team at the booth is happy to help.",
     "contact": "Contact us",
     "items": [
       {
-        "q": "Do I need to deposit to get the ${amount} bonus?",
-        "a": "No. Open a GTC Standard account through this page and the ${amount} USD trading bonus is added once your account is activated. No deposit is needed."
+        "q": "Do I need to deposit to open an account?",
+        "a": "No. Register on this page to open a GTC Cent account. No deposit is required to get started."
       },
       {
         "q": "Why don’t I choose a password?",
@@ -249,15 +272,15 @@
       },
       {
         "q": "How do I activate my account?",
-        "a": "Log in to the client portal with the details we emailed you, complete your profile and verify your identity. The bonus is unlocked once verification is approved."
+        "a": "Log in to the client portal with the details we emailed you, complete your profile and verify your identity."
       },
       {
-        "q": "What can I trade with the bonus?",
-        "a": "Use it to trade real markets: forex, metals, energy, indices and more, on MetaTrader 4, MetaTrader 5 or the GTC Go app."
+        "q": "What can I trade?",
+        "a": "Forex, metals, energy, indices and more, on MetaTrader 4, MetaTrader 5 or the GTC Go app."
       },
       {
-        "q": "Can I withdraw the bonus?",
-        "a": "The bonus itself is for trading. Profits you make with it can be withdrawn according to the bonus terms. Please read the Bonus Terms before you start."
+        "q": "What account type do I open here?",
+        "a": "A GTC Cent account, designed to help you start trading global markets on GTCFX platforms."
       },
       {
         "q": "I didn’t get the email. What now?",
@@ -265,7 +288,8 @@
       }
     ],
     "languages": "20+ languages",
-    "questions": "Questions"
+    "questions": "Questions",
+    "titleBBonus": "your bonus?"
   },
   "companyPage": {
     "legalSection": {

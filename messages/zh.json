@@ -1,19 +1,21 @@
 {
   "meta": {
-    "title": "GTCFX 亮相 {expo} | 领取 ${amount} 交易赠金",
-    "description": "在 {expo} 开设 GTC 标准账户，即可获得 ${amount} 美元交易赠金，无需入金。"
+    "title": "GTCFX 参加 {expo}",
+    "description": "在 {expo} 开设 GTC 美分账户，通过 GTCFX 进入全球金融市场。",
+    "titleBonus": "GTCFX 参加 {expo}",
+    "descriptionBonus": "在 {expo} 开设 GTC 美分账户，通过 GTCFX 进入全球金融市场。"
   },
   "hero": {
-    "kicker": "官方赞助商 · 展会专享",
-    "titleLine1": "迪拜在召唤。",
-    "titleLine2": "解锁您的 ${amount} 赠金。",
-    "sponsorIntro": "GTCFX 为 2026 迪拜外汇交易者峰会官方赞助商。数分钟内完成注册，无需入金，即可领取 ${amount} 美元交易赠金，探索外汇、黄金、指数等市场。",
+    "kicker": "官方赞助商 · 2026 开罗 Smart Vision 峰会",
+    "titleLine1": "从开罗到全球市场",
+    "titleLine2": "与 GTCFX 同行",
+    "sponsorIntro": "在 GTCFX 开设 GTC 美分账户，获得整合的全球金融市场交易体验。",
     "dateLabel": "日期",
     "venueLabel": "地点",
     "bonusCurrency": "USD",
     "bonusLabel": "交易赠金",
     "noDeposit": "无需入金。",
-    "lead": "开设 GTC 标准账户，凭 ${amount} 交易赠金迈出下一步。",
+    "lead": "开设 GTC 美分账户，凭 ${amount} 交易赠金迈出下一步。",
     "terms": "适用资格及赠金条款。",
     "boothBadge": "欢迎莅临 {booth} 号展位",
     "stepsDetailed": [
@@ -46,12 +48,27 @@
       "白银",
       "BTC/USD",
       "GER40"
+    ],
+    "spotlightTitle": "在峰会现场",
+    "spotlight": [
+      {
+        "title": "受监管的全球经纪商",
+        "text": "GTCFX 在多个司法管辖区持牌，具备全球市场经验。"
+      },
+      {
+        "title": "美分账户轻松起步",
+        "text": "开设 GTC 美分账户，快速进入真实市场。"
+      },
+      {
+        "title": "全平台交易",
+        "text": "通过 MT4、MT5 与 GTC Go 随时随地交易。"
+      }
     ]
   },
   "form": {
-    "eyebrow": "${amount} 欢迎赠金",
+    "eyebrow": "开设账户",
     "title": "立即注册",
-    "subtitle": "创建账户，领取 ${amount} 交易赠金。",
+    "subtitle": "几分钟内完成注册，通过 GTCFX 进入全球市场。",
     "firstName": "名",
     "firstNamePlaceholder": "例如：明",
     "lastName": "姓",
@@ -79,7 +96,7 @@
     "bonusTermsLink": "赠金条款",
     "and": "及",
     "agreementLink": "客户协议",
-    "submit": "领取 ${amount} 赠金",
+    "submit": "立即注册",
     "submitting": "正在开设账户…",
     "secure": "256 位加密，您的信息安全无虞。",
     "progress": "已完成 {done}/{total}",
@@ -103,7 +120,10 @@
       "otpSent": "6 位验证码已发送到您的邮箱。",
       "codeError": "验证码发送失败，请重试。",
       "registrationFailed": "账户开设失败，请重试。"
-    }
+    },
+    "eyebrowBonus": "${amount} 欢迎赠金",
+    "submitBonus": "领取 ${amount} 赠金",
+    "subtitleBonus": "创建账户，领取 ${amount} 交易赠金。"
   },
   "success": {
     "eyebrow": "注册完成",
@@ -241,7 +261,7 @@
     "items": [
       {
         "q": "领取 ${amount} 美元赠金需要入金吗？",
-        "a": "不需要。通过本页面开设 GTC 标准账户，账户激活后即可获得 ${amount} 美元交易赠金，无需任何入金。"
+        "a": "不需要。通过本页面开设 GTC 美分账户，账户激活后即可获得 ${amount} 美元交易赠金，无需任何入金。"
       },
       {
         "q": "为什么不用设置密码？",
@@ -265,7 +285,8 @@
       }
     ],
     "languages": "20多种语言",
-    "questions": "问题"
+    "questions": "问题",
+    "titleBBonus": "您可能想问"
   },
   "companyPage": {
     "legalSection": {

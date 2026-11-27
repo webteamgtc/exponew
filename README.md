@@ -1,6 +1,6 @@
 # GTC Expo — booth registration page
 
-Landing page for expos. Visitors read the offer and open a GTC Standard account; the account is created in the CRM
+Landing page for expos. Visitors read the offer and open a GTC Cent account; the account is created in the CRM
 through the same portal API as the main site (gtcrevamp2):
 
 ```
@@ -42,8 +42,8 @@ A QR code can point to any of these links; query parameters such as `?ref=CODE` 
 | `https://<site>/` | the visitor's language (below) |
 
 For a link without a language, `src/proxy.js` picks: the browser's language if we have it (phone set to Uzbek → `/uz`,
-Russian → `/ru`); otherwise, a visitor in Uzbekistan → `/uz` or Russia → `/ru` even with an English phone (edit
-`COUNTRY_LOCALE` to add countries); otherwise English. The country comes from the host's geo header
+Russian → `/ru`); otherwise, a visitor in Uzbekistan → `/uz`, Russia → `/ru` or Egypt → `/ar` even with an English phone (edit
+`COUNTRY_LOCALE` to add countries); otherwise English. For Cairo expos, print QR codes to `/ar`. The country comes from the host's geo header
 (`x-vercel-ip-country`, `cf-ipcountry` or `cloudfront-viewer-country`), so it needs Vercel, Cloudflare or CloudFront in
 front of the site. For a booth where the language is known, print the `/uz` or `/ru` link in the QR code.
 

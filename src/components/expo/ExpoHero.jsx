@@ -9,14 +9,15 @@
 import { useId, useState } from 'react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { BadgeCheck, CalendarDays, MapPin } from 'lucide-react';
+import { BadgeCheck, CalendarDays, MapPin, ShieldCheck, LineChart, Smartphone } from 'lucide-react';
 import { EASE, HeroIn, Marquee, WordReveal } from '@/components/motion';
 import Logo from '@/components/shared/Logo';
 import LanguagePicker from '@/components/shared/LanguagePicker';
-import { EXPO } from '@/config/expo';
+import { EXPO, hasBonusOffer } from '@/config/expo';
 import ExpoRegisterForm from './ExpoRegisterForm';
 import JumpToForm from './JumpToForm';
 import Timeline from './Timeline';
+import { cn } from '@/lib/utils';
 
 /** Fixed positions (no Math.random, so server and browser render the same) for the drifting gold sparks. */
 const SPARKS = [
@@ -32,6 +33,7 @@ export default function ExpoHero() {
   const t = useTranslations('hero');
   const [stage, setStage] = useState(0);
   const [filled, setFilled] = useState(0);
+  const bonus = hasBonusOffer();
 
   return (
     <section className="grid lg:min-h-screen lg:grid-cols-2">
@@ -53,30 +55,72 @@ export default function ExpoHero() {
           <h1 className="heading-page mt-4">
             <WordReveal text={t('titleLine1')} immediate />
             <br />
-            <WordReveal text={t('titleLine2', { amount: EXPO.bonus })} immediate delay={0.25} wordClassName="heading-accent" />
+            <WordReveal
+              text={bonus ? t('titleLine2', { amount: EXPO.bonus }) : t('titleLine2')}
+              immediate
+              delay={0.25}
+              wordClassName="heading-accent"
+            />
           </h1>
           <HeroIn delay={0.2} as="p" className="mt-5 max-w-lg text-sm leading-relaxed text-white/75 md:text-base">
-            {t('sponsorIntro', { amount: EXPO.bonus })}
+            {bonus ? t('sponsorIntro', { amount: EXPO.bonus }) : t('sponsorIntro')}
           </HeroIn>
 
-          {/* the bonus: liquid-gold amount in a glass card */}
-          <HeroIn delay={0.3} className="relative mt-7 overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] backdrop-blur-sm md:p-6">
-            <div aria-hidden className="absolute -start-12 -top-12 size-60 rounded-full bg-gold/25 blur-3xl" />
-            <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-200/60 to-transparent" />
-            <div className="relative flex flex-wrap items-center gap-x-6 gap-y-3">
-              <LiquidAmount amount={EXPO.bonus} />
-              <div className="flex min-w-[9.5rem] flex-1 flex-col items-start gap-1.5 leading-tight">
-                <span className="text-2xl font-semibold text-gold-200 md:text-3xl">{EXPO.currency}</span>
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-300 md:text-sm">{t('bonusLabel')}</span>
-                <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-up/15 px-3 py-1.5 text-xs font-semibold text-emerald-200 ring-1 ring-emerald-300/25 md:text-sm">
-                  <BadgeCheck className="size-4 shrink-0" strokeWidth={2} /> {t('noDeposit')}
-                </span>
+          {!bonus ? (
+            <HeroIn delay={0.28} className="mt-7 overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm md:p-6">
+              <p className="heading-label mb-4 text-gold-200">{t('spotlightTitle')}</p>
+              <div className="flex flex-col gap-2.5 text-sm text-white/80">
+                <p className="inline-flex items-center gap-2">
+                  <CalendarDays className="size-4 shrink-0 text-gold" />
+                  <span>
+                    {t('dateLabel')}: {EXPO.dates}
+                  </span>
+                </p>
+                <p className="inline-flex items-start gap-2">
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-gold" />
+                  <span>
+                    {t('venueLabel')}: {EXPO.venue}
+                  </span>
+                </p>
               </div>
-            </div>
-            <p className="relative mt-4 max-w-md text-sm leading-relaxed text-white/70 md:text-base">{t('lead', { amount: EXPO.bonus })}</p>
-          </HeroIn>
+              <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">
+                {t.raw('spotlight').map((item, i) => {
+                  const Icon = [ShieldCheck, LineChart, Smartphone][i] ?? ShieldCheck;
+                  return (
+                    <li key={item.title} className="flex gap-3">
+                      <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold-200 ring-1 ring-gold/25">
+                        <Icon className="size-4" strokeWidth={2} />
+                      </span>
+                      <span>
+                        <strong className="block text-sm text-white">{item.title}</strong>
+                        <span className="mt-0.5 block text-sm leading-relaxed text-white/60">{item.text}</span>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </HeroIn>
+          ) : null}
 
-          <div className="mt-6 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6">
+          {bonus ? (
+            <HeroIn delay={0.3} className="relative mt-7 overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-5 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.9)] backdrop-blur-sm md:p-6">
+              <div aria-hidden className="absolute -start-12 -top-12 size-60 rounded-full bg-gold/25 blur-3xl" />
+              <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-200/60 to-transparent" />
+              <div className="relative flex flex-wrap items-center gap-x-6 gap-y-3">
+                <LiquidAmount amount={EXPO.bonus} />
+                <div className="flex min-w-[9.5rem] flex-1 flex-col items-start gap-1.5 leading-tight">
+                  <span className="text-2xl font-semibold text-gold-200 md:text-3xl">{EXPO.currency}</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-300 md:text-sm">{t('bonusLabel')}</span>
+                  <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-up/15 px-3 py-1.5 text-xs font-semibold text-emerald-200 ring-1 ring-emerald-300/25 md:text-sm">
+                    <BadgeCheck className="size-4 shrink-0" strokeWidth={2} /> {t('noDeposit')}
+                  </span>
+                </div>
+              </div>
+              <p className="relative mt-4 max-w-md text-sm leading-relaxed text-white/70 md:text-base">{t('lead', { amount: EXPO.bonus })}</p>
+            </HeroIn>
+          ) : null}
+
+          <div className={cn('rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6', bonus ? 'mt-6' : 'mt-7')}>
             <p className="heading-label mb-6">{t('stepsTitle')}</p>
             <Timeline steps={t.raw('stepsDetailed')} stage={stage} filled={filled} amount={EXPO.bonus} tone="dark" />
           </div>

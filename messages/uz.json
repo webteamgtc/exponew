@@ -1,19 +1,21 @@
 {
   "meta": {
-    "title": "GTCFX {expo} doirasida | ${amount} savdo bonusini oling",
-    "description": "{expo} doirasida GTC Standard hisobini oching va {amount} USD savdo bonusini oling. Depozit talab qilinmaydi."
+    "title": "GTCFX — {expo}",
+    "description": "{expo} doirasida GTC Cent hisobini oching va GTCFX bilan jahon bozorlariga chiqing.",
+    "titleBonus": "GTCFX — {expo}",
+    "descriptionBonus": "{expo} doirasida GTC Cent hisobini oching va GTCFX bilan jahon bozorlariga chiqing."
   },
   "hero": {
-    "kicker": "Rasmiy homiy · Ekspo maxsus taklif",
-    "titleLine1": "Dubay chaqirmoqda.",
-    "titleLine2": "${amount} bonusingizni oching.",
-    "sponsorIntro": "GTCFX Forex Traders Summit Dubai 2026 da rasmiy homiy. Bir necha daqiqada roʻyxatdan oʻting — depozitsiz — va foreks, oltin, indekslar uchun ${amount} AQSh dollaridagi savdo bonusini oling.",
+    "kicker": "Rasmiy homiy · Smart Vision Summit Cairo 2026",
+    "titleLine1": "Qohiradan jahon bozorlariga",
+    "titleLine2": "GTCFX bilan",
+    "sponsorIntro": "GTCFX bilan GTC Cent hisobingizni oching va jahon moliya bozorlarida yaxlit savdo tajribasidan foydalaning.",
     "dateLabel": "Sana",
     "venueLabel": "Joy",
     "bonusCurrency": "USD",
     "bonusLabel": "Savdo bonusi",
     "noDeposit": "Depozit talab qilinmaydi.",
-    "lead": "GTC Standard hisobini oching va ${amount} savdo bonusi bilan keyingi qadamingizni boshlang.",
+    "lead": "GTC Cent hisobini oching va ${amount} savdo bonusi bilan keyingi qadamingizni boshlang.",
     "terms": "Muvofiqlik va bonus shartlari amal qiladi.",
     "boothBadge": "Bizni {booth}-stendda kutamiz",
     "stepsDetailed": [
@@ -46,12 +48,27 @@
       "Kumush",
       "BTC/USD",
       "GER40"
+    ],
+    "spotlightTitle": "Summitda GTCFX bilan",
+    "spotlight": [
+      {
+        "title": "Globall tartibga solingan broker",
+        "text": "GTCFX bir nechta yurisdiksiyalarda litsenziyaga ega."
+      },
+      {
+        "title": "Boshlash uchun Cent hisob",
+        "text": "GTC Cent hisobini oching va real bozorlarga chiqing."
+      },
+      {
+        "title": "Har qurilmada platformalar",
+        "text": "MT4, MT5 va GTC Go ilovasida savdo qiling."
+      }
     ]
   },
   "form": {
-    "eyebrow": "${amount} xush kelibsiz bonusi",
+    "eyebrow": "Open account",
     "title": "Hoziroq roʻyxatdan oʻting",
-    "subtitle": "${amount} savdo bonusini olish uchun hisob yarating.",
+    "subtitle": "Bir necha daqiqada roʻyxatdan oʻting va GTCFX bilan jahon bozorlariga chiqing.",
     "firstName": "Ism",
     "firstNamePlaceholder": "masalan, Aziz",
     "lastName": "Familiya",
@@ -78,7 +95,7 @@
     "bonusTermsLink": "Bonus shartlari",
     "and": "va",
     "agreementLink": "Mijoz shartnomasi",
-    "submit": "${amount} bonusni olish",
+    "submit": "Hozir roʻyxatdan oʻtish",
     "submitting": "Hisobingiz ochilmoqda…",
     "secure": "256 bitli shifrlash. Maʼlumotlaringiz bizda xavfsiz.",
     "progress": "{total} tadan {done} tasi bajarildi",
@@ -103,7 +120,10 @@
       "codeError": "Kodni yuborib boʻlmadi. Iltimos, qayta urinib koʻring.",
       "registrationFailed": "Hisobingizni ochib boʻlmadi. Iltimos, qayta urinib koʻring."
     },
-    "passwordNote": "Parol yaratish shart emas: hisobingizni oʻzimiz sozlaymiz va u ochilishi bilan kirish maʼlumotlarini elektron pochtangizga yuboramiz."
+    "passwordNote": "Parol yaratish shart emas: hisobingizni oʻzimiz sozlaymiz va u ochilishi bilan kirish maʼlumotlarini elektron pochtangizga yuboramiz.",
+    "eyebrowBonus": "${amount} xush kelibsiz bonusi",
+    "submitBonus": "${amount} bonusni olish",
+    "subtitleBonus": "${amount} savdo bonusini olish uchun hisob yarating."
   },
   "success": {
     "eyebrow": "Roʻyxatdan oʻtish yakunlandi",
@@ -241,7 +261,7 @@
     "items": [
       {
         "q": "${amount} bonusni olish uchun depozit kiritishim kerakmi?",
-        "a": "Yoʻq. Ushbu sahifa orqali GTC Standard hisobini oching va hisobingiz faollashtirilgach ${amount} USD savdo bonusi qoʻshiladi. Depozit talab qilinmaydi."
+        "a": "Yoʻq. Ushbu sahifa orqali GTC Cent hisobini oching va hisobingiz faollashtirilgach ${amount} USD savdo bonusi qoʻshiladi. Depozit talab qilinmaydi."
       },
       {
         "q": "Nega parolni oʻzim tanlamayman?",
@@ -265,7 +285,8 @@
       }
     ],
     "languages": "20+ til",
-    "questions": "Savollar"
+    "questions": "Savollar",
+    "titleBBonus": "savollaringiz bormi?"
   },
   "companyPage": {
     "legalSection": {

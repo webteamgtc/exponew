@@ -4,19 +4,21 @@
  *   name, dates, venue  shown above the form (with Date / Venue labels from messages). name is also used in the page title
  *   city              short city for e-mails; welcome e-mail (no expo logo: it changes every show)
  *   booth          shown as "Visit us at Booth …" when set
- *   bonus          the welcome bonus shown on the page, the button and in the e-mail
+ *   bonusOffer     false hides the $bonus hero card and bonus wording on the page and in e-mails
+ *   bonus          the welcome bonus shown on the page, the button and in the e-mail (when bonusOffer is true)
  *   inviteCode     the invitation (IB / partner) code every account opened on this page is registered under.
  *   forceInviteCode  true: the server always uses inviteCode (a ?ref= link or a typed code cannot change it) and the form
  *                  hides the invitation field. false: inviteCode is only the default when the visitor gives none, and
  *                  a code in the link (?ref=, ?code=…) or typed in the form wins.
  */
 export const EXPO = {
-  name: 'Forex Traders Expo & Summit Dubai 2026',
-  dates: '24–25 November 2026',
-  venue: 'Festival Arena, Dubai, UAE',
-  city: 'Dubai',
+  name: 'Smart Vision Summit (Investment Expo) Egypt 2026',
+  dates: '5–6 December 2026',
+  venue: 'The Nile Ritz-Carlton, Cairo, Egypt',
+  city: 'Cairo',
   booth: '',
-  bonus: 50,
+  bonusOffer: false,
+  bonus: 0,
   currency: 'USD',
   inviteCode: 'VsL5fGK2',
   forceInviteCode: true,
@@ -47,3 +49,5 @@ export const EXPO = {
 
 /** The main website: links in the sections brought over from it (Platforms, Regulation, Awards, FAQ) open there. */
 export const MAIN_SITE = 'https://www.gtcfx.com';
+
+export const hasBonusOffer = () => EXPO.bonusOffer !== false && Number(EXPO.bonus) > 0;

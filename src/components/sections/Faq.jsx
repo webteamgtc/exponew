@@ -1,5 +1,5 @@
 'use client';
-import { EXPO } from '@/config/expo';
+import { EXPO, hasBonusOffer } from '@/config/expo';
 import { goToForm } from '@/components/expo/goToForm';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -12,8 +12,8 @@ import { cn } from '@/lib/utils';
 export function Faq() {
   const t = useTranslations('faq');
   const tf = useTranslations('form'); // "Register now"
-  // expo FAQ: {amount} in the questions and answers is the bonus from src/config/expo.js
-  const fill = (x) => x.replaceAll('{amount}', EXPO.bonus);
+  const bonus = hasBonusOffer();
+  const fill = (x) => (bonus ? x.replaceAll('{amount}', EXPO.bonus) : x);
   const items = t.raw('items').map((it) => ({ ...it, q: fill(it.q), a: fill(it.a) }));
   const [active, setActive] = useState(0);
   const total = String(items.length).padStart(2, '0');
@@ -23,7 +23,7 @@ export function Faq() {
       <Ambient tone="light" />
       <div className="container-x relative">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-[70px]">
-          <SectionHeading title={t('titleA')} titleB={t('titleB')} align="start" className="max-w-xl" />
+          <SectionHeading title={t('titleA')} titleB={bonus ? t('titleBBonus') : t('titleB')} align="start" className="max-w-xl" />
           <Reveal y={12} delay={0.12} className="max-w-[375px] justify-self-start pb-1 lg:justify-self-end lg:text-end">
             <p className="text-base leading-[1.8] text-ink/60">{t('subtitle')}</p>
             <a href="#register" onClick={goToForm} className="mt-3 inline-flex items-center gap-2 py-2 text-sm font-semibold text-brand transition hover:text-brand-700">

@@ -1,6 +1,6 @@
 'use client';
 /**
- * "Register now" card: opens a GTC Standard account in the CRM, exactly like the main site's live-account form
+ * "Register now" card: opens a GTC Cent account in the CRM, exactly like the main site's live-account form
  * (src/components/shared/LiveApplicationForm.jsx in gtcrevamp2), through the same proxy routes:
  *   /api/gtc/get-country → /api/gtc/check-email → /api/gtc/get-code (email code) → /api/expo/register
  * Fields: first + last name, mobile, email + code, country, invitation code, terms. No password to choose: the server
@@ -22,7 +22,7 @@ import { ChevronDown, Gift, Globe, KeyRound, LoaderCircle, LockKeyhole, Mail, Ti
 import { Button } from '@/components/ui/button';
 import { EASE } from '@/components/motion';
 import { EMAIL_RE, LETTERS_RE, PHONE_COUNTRIES, Field, dialFor, fieldBox as box, fieldInput as input, fieldState as boxState, phoneCountryOf, phoneField as phoneCls, post, useGtcCountries } from '@/components/shared/formKit';
-import { EXPO } from '@/config/expo';
+import { EXPO, hasBonusOffer } from '@/config/expo';
 import { cn } from '@/lib/utils';
 import OtpBoxes from './OtpBoxes';
 import RegisterSuccess from './RegisterSuccess';
@@ -41,6 +41,7 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
   const t = useTranslations('form');
   const locale = useLocale();
   const amount = EXPO.bonus;
+  const bonus = hasBonusOffer();
   const [values, setValues] = useState(EMPTY);
   const [touched, setTouched] = useState({});
   const { countries, failed: countriesFailed, suggested } = useGtcCountries();
@@ -207,13 +208,15 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
           >
             <header className="mb-6">
               <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-gold-600">
-                <motion.span animate={{ rotate: [0, -12, 12, -6, 0] }} transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 3 }} className="inline-flex">
-                  <Gift className="size-4" />
-                </motion.span>
-                {t('eyebrow', { amount })}
+                {bonus ? (
+                  <motion.span animate={{ rotate: [0, -12, 12, -6, 0] }} transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 3 }} className="inline-flex">
+                    <Gift className="size-4" />
+                  </motion.span>
+                ) : null}
+                {bonus ? t('eyebrowBonus', { amount }) : t('eyebrow')}
               </p>
               <h2 className="heading-card mt-2">{t('title')}</h2>
-              <p className="mt-1 text-sm text-ink/60">{t('subtitle', { amount })}</p>
+              <p className="mt-1 text-sm text-ink/60">{bonus ? t('subtitleBonus', { amount }) : t('subtitle')}</p>
             </header>
 
             <div className="grid gap-4">
@@ -330,10 +333,14 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
                   <a href={EXPO.termsUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-brand underline-offset-2 hover:underline">
                     {t('termsLink')}
                   </a>
-                  ,{' '}
-                  <a href={EXPO.bonusTermsUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-brand underline-offset-2 hover:underline">
-                    {t('bonusTermsLink')}
-                  </a>{' '}
+                  {bonus ? (
+                    <>
+                      ,{' '}
+                      <a href={EXPO.bonusTermsUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-brand underline-offset-2 hover:underline">
+                        {t('bonusTermsLink')}
+                      </a>{' '}
+                    </>
+                  ) : null}
                   {t('and')}{' '}
                   <a href={EXPO.clientAgreementUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-brand underline-offset-2 hover:underline">
                     {t('agreementLink')}
@@ -349,7 +356,7 @@ export default function ExpoRegisterForm({ onProgress, onDone, onReset, classNam
                   </>
                 ) : (
                   <>
-                    <Gift /> {t('submit', { amount })}
+                    {bonus ? <Gift /> : null} {bonus ? t('submitBonus', { amount }) : t('submit')}
                   </>
                 )}
               </Button>
